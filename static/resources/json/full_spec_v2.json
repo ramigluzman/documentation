@@ -293,7 +293,7 @@
         }
       },
       "ConfluentAccountID": {
-        "description": "Confluent Account id.",
+        "description": "Confluent Account ID.",
         "in": "path",
         "name": "account_id",
         "required": true,
@@ -75766,6 +75766,41 @@
                         "items": {
                           "description": "Case when signal is generated.",
                           "properties": {
+                            "actions": {
+                              "description": "Action to perform for each rule case.",
+                              "items": {
+                                "description": "Action to perform when a signal is triggered. Only available for Application Security rule type.",
+                                "properties": {
+                                  "options": {
+                                    "description": "Options for the rule action",
+                                    "properties": {
+                                      "duration": {
+                                        "description": "Duration of the action in seconds. 0 indicates no expiration.",
+                                        "example": 0,
+                                        "format": "int64",
+                                        "minimum": 0,
+                                        "type": "integer"
+                                      }
+                                    },
+                                    "type": "object"
+                                  },
+                                  "type": {
+                                    "description": "The action type.",
+                                    "enum": [
+                                      "block_ip",
+                                      "block_user"
+                                    ],
+                                    "type": "string",
+                                    "x-enum-varnames": [
+                                      "BLOCK_IP",
+                                      "BLOCK_USER"
+                                    ]
+                                  }
+                                },
+                                "type": "object"
+                              },
+                              "type": "array"
+                            },
                             "condition": {
                               "description": "A case contains logical operations (`>`,`>=`, `&&`, `||`) to determine if a signal should be generated\nbased on the event counts in the previously defined queries.",
                               "type": "string"
@@ -75814,6 +75849,17 @@
                         "example": 1729843470000,
                         "format": "int64",
                         "type": "integer"
+                      },
+                      "groupSignalsBy": {
+                        "description": "Additional grouping to perform on top of the existing groups in the query section. Must be a subset of the existing groups.",
+                        "example": [
+                          "service"
+                        ],
+                        "items": {
+                          "description": "Field to group by.",
+                          "type": "string"
+                        },
+                        "type": "array"
                       },
                       "index": {
                         "description": "Index used to load the data.",
@@ -76353,6 +76399,41 @@
                 "items": {
                   "description": "Case when signal is generated.",
                   "properties": {
+                    "actions": {
+                      "description": "Action to perform for each rule case.",
+                      "items": {
+                        "description": "Action to perform when a signal is triggered. Only available for Application Security rule type.",
+                        "properties": {
+                          "options": {
+                            "description": "Options for the rule action",
+                            "properties": {
+                              "duration": {
+                                "description": "Duration of the action in seconds. 0 indicates no expiration.",
+                                "example": 0,
+                                "format": "int64",
+                                "minimum": 0,
+                                "type": "integer"
+                              }
+                            },
+                            "type": "object"
+                          },
+                          "type": {
+                            "description": "The action type.",
+                            "enum": [
+                              "block_ip",
+                              "block_user"
+                            ],
+                            "type": "string",
+                            "x-enum-varnames": [
+                              "BLOCK_IP",
+                              "BLOCK_USER"
+                            ]
+                          }
+                        },
+                        "type": "object"
+                      },
+                      "type": "array"
+                    },
                     "condition": {
                       "description": "A case contains logical operations (`>`,`>=`, `&&`, `||`) to determine if a signal should be generated\nbased on the event counts in the previously defined queries.",
                       "type": "string"
@@ -76401,6 +76482,17 @@
                 "example": 1729843470000,
                 "format": "int64",
                 "type": "integer"
+              },
+              "groupSignalsBy": {
+                "description": "Additional grouping to perform on top of the existing groups in the query section. Must be a subset of the existing groups.",
+                "example": [
+                  "service"
+                ],
+                "items": {
+                  "description": "Field to group by.",
+                  "type": "string"
+                },
+                "type": "array"
               },
               "index": {
                 "description": "Index used to load the data.",
@@ -76923,6 +77015,41 @@
                     "items": {
                       "description": "Case when signal is generated.",
                       "properties": {
+                        "actions": {
+                          "description": "Action to perform for each rule case.",
+                          "items": {
+                            "description": "Action to perform when a signal is triggered. Only available for Application Security rule type.",
+                            "properties": {
+                              "options": {
+                                "description": "Options for the rule action",
+                                "properties": {
+                                  "duration": {
+                                    "description": "Duration of the action in seconds. 0 indicates no expiration.",
+                                    "example": 0,
+                                    "format": "int64",
+                                    "minimum": 0,
+                                    "type": "integer"
+                                  }
+                                },
+                                "type": "object"
+                              },
+                              "type": {
+                                "description": "The action type.",
+                                "enum": [
+                                  "block_ip",
+                                  "block_user"
+                                ],
+                                "type": "string",
+                                "x-enum-varnames": [
+                                  "BLOCK_IP",
+                                  "BLOCK_USER"
+                                ]
+                              }
+                            },
+                            "type": "object"
+                          },
+                          "type": "array"
+                        },
                         "condition": {
                           "description": "A case contains logical operations (`>`,`>=`, `&&`, `||`) to determine if a signal should be generated\nbased on the event counts in the previously defined queries.",
                           "type": "string"
@@ -76971,6 +77098,17 @@
                     "example": 1729843470000,
                     "format": "int64",
                     "type": "integer"
+                  },
+                  "groupSignalsBy": {
+                    "description": "Additional grouping to perform on top of the existing groups in the query section. Must be a subset of the existing groups.",
+                    "example": [
+                      "service"
+                    ],
+                    "items": {
+                      "description": "Field to group by.",
+                      "type": "string"
+                    },
+                    "type": "array"
                   },
                   "index": {
                     "description": "Index used to load the data.",
@@ -101498,6 +101636,41 @@
             "items": {
               "description": "Case when signal is generated.",
               "properties": {
+                "actions": {
+                  "description": "Action to perform for each rule case.",
+                  "items": {
+                    "description": "Action to perform when a signal is triggered. Only available for Application Security rule type.",
+                    "properties": {
+                      "options": {
+                        "description": "Options for the rule action",
+                        "properties": {
+                          "duration": {
+                            "description": "Duration of the action in seconds. 0 indicates no expiration.",
+                            "example": 0,
+                            "format": "int64",
+                            "minimum": 0,
+                            "type": "integer"
+                          }
+                        },
+                        "type": "object"
+                      },
+                      "type": {
+                        "description": "The action type.",
+                        "enum": [
+                          "block_ip",
+                          "block_user"
+                        ],
+                        "type": "string",
+                        "x-enum-varnames": [
+                          "BLOCK_IP",
+                          "BLOCK_USER"
+                        ]
+                      }
+                    },
+                    "type": "object"
+                  },
+                  "type": "array"
+                },
                 "condition": {
                   "description": "A case contains logical operations (`>`,`>=`, `&&`, `||`) to determine if a signal should be generated\nbased on the event counts in the previously defined queries.",
                   "type": "string"
@@ -101546,6 +101719,17 @@
             "example": 1729843470000,
             "format": "int64",
             "type": "integer"
+          },
+          "groupSignalsBy": {
+            "description": "Additional grouping to perform on top of the existing groups in the query section. Must be a subset of the existing groups.",
+            "example": [
+              "service"
+            ],
+            "items": {
+              "description": "Field to group by.",
+              "type": "string"
+            },
+            "type": "array"
           },
           "index": {
             "description": "Index used to load the data.",
@@ -111535,6 +111719,41 @@
                           "items": {
                             "description": "Case when signal is generated.",
                             "properties": {
+                              "actions": {
+                                "description": "Action to perform for each rule case.",
+                                "items": {
+                                  "description": "Action to perform when a signal is triggered. Only available for Application Security rule type.",
+                                  "properties": {
+                                    "options": {
+                                      "description": "Options for the rule action",
+                                      "properties": {
+                                        "duration": {
+                                          "description": "Duration of the action in seconds. 0 indicates no expiration.",
+                                          "example": 0,
+                                          "format": "int64",
+                                          "minimum": 0,
+                                          "type": "integer"
+                                        }
+                                      },
+                                      "type": "object"
+                                    },
+                                    "type": {
+                                      "description": "The action type.",
+                                      "enum": [
+                                        "block_ip",
+                                        "block_user"
+                                      ],
+                                      "type": "string",
+                                      "x-enum-varnames": [
+                                        "BLOCK_IP",
+                                        "BLOCK_USER"
+                                      ]
+                                    }
+                                  },
+                                  "type": "object"
+                                },
+                                "type": "array"
+                              },
                               "condition": {
                                 "description": "A case contains logical operations (`>`,`>=`, `&&`, `||`) to determine if a signal should be generated\nbased on the event counts in the previously defined queries.",
                                 "type": "string"
@@ -111583,6 +111802,17 @@
                           "example": 1729843470000,
                           "format": "int64",
                           "type": "integer"
+                        },
+                        "groupSignalsBy": {
+                          "description": "Additional grouping to perform on top of the existing groups in the query section. Must be a subset of the existing groups.",
+                          "example": [
+                            "service"
+                          ],
+                          "items": {
+                            "description": "Field to group by.",
+                            "type": "string"
+                          },
+                          "type": "array"
                         },
                         "index": {
                           "description": "Index used to load the data.",
@@ -146907,6 +147137,41 @@
                         "items": {
                           "description": "Case when signal is generated.",
                           "properties": {
+                            "actions": {
+                              "description": "Action to perform for each rule case.",
+                              "items": {
+                                "description": "Action to perform when a signal is triggered. Only available for Application Security rule type.",
+                                "properties": {
+                                  "options": {
+                                    "description": "Options for the rule action",
+                                    "properties": {
+                                      "duration": {
+                                        "description": "Duration of the action in seconds. 0 indicates no expiration.",
+                                        "example": 0,
+                                        "format": "int64",
+                                        "minimum": 0,
+                                        "type": "integer"
+                                      }
+                                    },
+                                    "type": "object"
+                                  },
+                                  "type": {
+                                    "description": "The action type.",
+                                    "enum": [
+                                      "block_ip",
+                                      "block_user"
+                                    ],
+                                    "type": "string",
+                                    "x-enum-varnames": [
+                                      "BLOCK_IP",
+                                      "BLOCK_USER"
+                                    ]
+                                  }
+                                },
+                                "type": "object"
+                              },
+                              "type": "array"
+                            },
                             "condition": {
                               "description": "A case contains logical operations (`>`,`>=`, `&&`, `||`) to determine if a signal should be generated\nbased on the event counts in the previously defined queries.",
                               "type": "string"
@@ -146955,6 +147220,17 @@
                         "example": 1729843470000,
                         "format": "int64",
                         "type": "integer"
+                      },
+                      "groupSignalsBy": {
+                        "description": "Additional grouping to perform on top of the existing groups in the query section. Must be a subset of the existing groups.",
+                        "example": [
+                          "service"
+                        ],
+                        "items": {
+                          "description": "Field to group by.",
+                          "type": "string"
+                        },
+                        "type": "array"
                       },
                       "index": {
                         "description": "Index used to load the data.",
@@ -147518,6 +147794,41 @@
                 "items": {
                   "description": "Case when signal is generated.",
                   "properties": {
+                    "actions": {
+                      "description": "Action to perform for each rule case.",
+                      "items": {
+                        "description": "Action to perform when a signal is triggered. Only available for Application Security rule type.",
+                        "properties": {
+                          "options": {
+                            "description": "Options for the rule action",
+                            "properties": {
+                              "duration": {
+                                "description": "Duration of the action in seconds. 0 indicates no expiration.",
+                                "example": 0,
+                                "format": "int64",
+                                "minimum": 0,
+                                "type": "integer"
+                              }
+                            },
+                            "type": "object"
+                          },
+                          "type": {
+                            "description": "The action type.",
+                            "enum": [
+                              "block_ip",
+                              "block_user"
+                            ],
+                            "type": "string",
+                            "x-enum-varnames": [
+                              "BLOCK_IP",
+                              "BLOCK_USER"
+                            ]
+                          }
+                        },
+                        "type": "object"
+                      },
+                      "type": "array"
+                    },
                     "condition": {
                       "description": "A case contains logical operations (`>`,`>=`, `&&`, `||`) to determine if a signal should be generated\nbased on the event counts in the previously defined queries.",
                       "type": "string"
@@ -147566,6 +147877,17 @@
                 "example": 1729843470000,
                 "format": "int64",
                 "type": "integer"
+              },
+              "groupSignalsBy": {
+                "description": "Additional grouping to perform on top of the existing groups in the query section. Must be a subset of the existing groups.",
+                "example": [
+                  "service"
+                ],
+                "items": {
+                  "description": "Field to group by.",
+                  "type": "string"
+                },
+                "type": "array"
               },
               "index": {
                 "description": "Index used to load the data.",
@@ -148116,6 +148438,41 @@
                     "items": {
                       "description": "Case when signal is generated.",
                       "properties": {
+                        "actions": {
+                          "description": "Action to perform for each rule case.",
+                          "items": {
+                            "description": "Action to perform when a signal is triggered. Only available for Application Security rule type.",
+                            "properties": {
+                              "options": {
+                                "description": "Options for the rule action",
+                                "properties": {
+                                  "duration": {
+                                    "description": "Duration of the action in seconds. 0 indicates no expiration.",
+                                    "example": 0,
+                                    "format": "int64",
+                                    "minimum": 0,
+                                    "type": "integer"
+                                  }
+                                },
+                                "type": "object"
+                              },
+                              "type": {
+                                "description": "The action type.",
+                                "enum": [
+                                  "block_ip",
+                                  "block_user"
+                                ],
+                                "type": "string",
+                                "x-enum-varnames": [
+                                  "BLOCK_IP",
+                                  "BLOCK_USER"
+                                ]
+                              }
+                            },
+                            "type": "object"
+                          },
+                          "type": "array"
+                        },
                         "condition": {
                           "description": "A case contains logical operations (`>`,`>=`, `&&`, `||`) to determine if a signal should be generated\nbased on the event counts in the previously defined queries.",
                           "type": "string"
@@ -148164,6 +148521,17 @@
                     "example": 1729843470000,
                     "format": "int64",
                     "type": "integer"
+                  },
+                  "groupSignalsBy": {
+                    "description": "Additional grouping to perform on top of the existing groups in the query section. Must be a subset of the existing groups.",
+                    "example": [
+                      "service"
+                    ],
+                    "items": {
+                      "description": "Field to group by.",
+                      "type": "string"
+                    },
+                    "type": "array"
                   },
                   "index": {
                     "description": "Index used to load the data.",
@@ -152718,6 +153086,41 @@
                       "items": {
                         "description": "Case when signal is generated.",
                         "properties": {
+                          "actions": {
+                            "description": "Action to perform for each rule case.",
+                            "items": {
+                              "description": "Action to perform when a signal is triggered. Only available for Application Security rule type.",
+                              "properties": {
+                                "options": {
+                                  "description": "Options for the rule action",
+                                  "properties": {
+                                    "duration": {
+                                      "description": "Duration of the action in seconds. 0 indicates no expiration.",
+                                      "example": 0,
+                                      "format": "int64",
+                                      "minimum": 0,
+                                      "type": "integer"
+                                    }
+                                  },
+                                  "type": "object"
+                                },
+                                "type": {
+                                  "description": "The action type.",
+                                  "enum": [
+                                    "block_ip",
+                                    "block_user"
+                                  ],
+                                  "type": "string",
+                                  "x-enum-varnames": [
+                                    "BLOCK_IP",
+                                    "BLOCK_USER"
+                                  ]
+                                }
+                              },
+                              "type": "object"
+                            },
+                            "type": "array"
+                          },
                           "condition": {
                             "description": "A rule case contains logical operations (`>`,`>=`, `&&`, `||`) to determine if a signal should be generated\nbased on the event counts in the previously defined queries.",
                             "type": "string"
@@ -152839,6 +153242,17 @@
                           }
                         },
                         "type": "object"
+                      },
+                      "type": "array"
+                    },
+                    "groupSignalsBy": {
+                      "description": "Additional grouping to perform on top of the existing groups in the query section. Must be a subset of the existing groups.",
+                      "example": [
+                        "service"
+                      ],
+                      "items": {
+                        "description": "Field to group by.",
+                        "type": "string"
                       },
                       "type": "array"
                     },
@@ -153388,6 +153802,41 @@
                       "items": {
                         "description": "Case when signal is generated.",
                         "properties": {
+                          "actions": {
+                            "description": "Action to perform for each rule case.",
+                            "items": {
+                              "description": "Action to perform when a signal is triggered. Only available for Application Security rule type.",
+                              "properties": {
+                                "options": {
+                                  "description": "Options for the rule action",
+                                  "properties": {
+                                    "duration": {
+                                      "description": "Duration of the action in seconds. 0 indicates no expiration.",
+                                      "example": 0,
+                                      "format": "int64",
+                                      "minimum": 0,
+                                      "type": "integer"
+                                    }
+                                  },
+                                  "type": "object"
+                                },
+                                "type": {
+                                  "description": "The action type.",
+                                  "enum": [
+                                    "block_ip",
+                                    "block_user"
+                                  ],
+                                  "type": "string",
+                                  "x-enum-varnames": [
+                                    "BLOCK_IP",
+                                    "BLOCK_USER"
+                                  ]
+                                }
+                              },
+                              "type": "object"
+                            },
+                            "type": "array"
+                          },
                           "condition": {
                             "description": "A rule case contains logical operations (`>`,`>=`, `&&`, `||`) to determine if a signal should be generated\nbased on the event counts in the previously defined queries.",
                             "type": "string"
@@ -153987,6 +154436,41 @@
       "SecurityMonitoringRuleCase": {
         "description": "Case when signal is generated.",
         "properties": {
+          "actions": {
+            "description": "Action to perform for each rule case.",
+            "items": {
+              "description": "Action to perform when a signal is triggered. Only available for Application Security rule type.",
+              "properties": {
+                "options": {
+                  "description": "Options for the rule action",
+                  "properties": {
+                    "duration": {
+                      "description": "Duration of the action in seconds. 0 indicates no expiration.",
+                      "example": 0,
+                      "format": "int64",
+                      "minimum": 0,
+                      "type": "integer"
+                    }
+                  },
+                  "type": "object"
+                },
+                "type": {
+                  "description": "The action type.",
+                  "enum": [
+                    "block_ip",
+                    "block_user"
+                  ],
+                  "type": "string",
+                  "x-enum-varnames": [
+                    "BLOCK_IP",
+                    "BLOCK_USER"
+                  ]
+                }
+              },
+              "type": "object"
+            },
+            "type": "array"
+          },
           "condition": {
             "description": "A rule case contains logical operations (`>`,`>=`, `&&`, `||`) to determine if a signal should be generated\nbased on the event counts in the previously defined queries.",
             "type": "string"
@@ -154025,9 +154509,100 @@
         },
         "type": "object"
       },
+      "SecurityMonitoringRuleCaseAction": {
+        "description": "Action to perform when a signal is triggered. Only available for Application Security rule type.",
+        "properties": {
+          "options": {
+            "description": "Options for the rule action",
+            "properties": {
+              "duration": {
+                "description": "Duration of the action in seconds. 0 indicates no expiration.",
+                "example": 0,
+                "format": "int64",
+                "minimum": 0,
+                "type": "integer"
+              }
+            },
+            "type": "object"
+          },
+          "type": {
+            "description": "The action type.",
+            "enum": [
+              "block_ip",
+              "block_user"
+            ],
+            "type": "string",
+            "x-enum-varnames": [
+              "BLOCK_IP",
+              "BLOCK_USER"
+            ]
+          }
+        },
+        "type": "object"
+      },
+      "SecurityMonitoringRuleCaseActionOptions": {
+        "description": "Options for the rule action",
+        "properties": {
+          "duration": {
+            "description": "Duration of the action in seconds. 0 indicates no expiration.",
+            "example": 0,
+            "format": "int64",
+            "minimum": 0,
+            "type": "integer"
+          }
+        },
+        "type": "object"
+      },
+      "SecurityMonitoringRuleCaseActionType": {
+        "description": "The action type.",
+        "enum": [
+          "block_ip",
+          "block_user"
+        ],
+        "type": "string",
+        "x-enum-varnames": [
+          "BLOCK_IP",
+          "BLOCK_USER"
+        ]
+      },
       "SecurityMonitoringRuleCaseCreate": {
         "description": "Case when signal is generated.",
         "properties": {
+          "actions": {
+            "description": "Action to perform for each rule case.",
+            "items": {
+              "description": "Action to perform when a signal is triggered. Only available for Application Security rule type.",
+              "properties": {
+                "options": {
+                  "description": "Options for the rule action",
+                  "properties": {
+                    "duration": {
+                      "description": "Duration of the action in seconds. 0 indicates no expiration.",
+                      "example": 0,
+                      "format": "int64",
+                      "minimum": 0,
+                      "type": "integer"
+                    }
+                  },
+                  "type": "object"
+                },
+                "type": {
+                  "description": "The action type.",
+                  "enum": [
+                    "block_ip",
+                    "block_user"
+                  ],
+                  "type": "string",
+                  "x-enum-varnames": [
+                    "BLOCK_IP",
+                    "BLOCK_USER"
+                  ]
+                }
+              },
+              "type": "object"
+            },
+            "type": "array"
+          },
           "condition": {
             "description": "A case contains logical operations (`>`,`>=`, `&&`, `||`) to determine if a signal should be generated\nbased on the event counts in the previously defined queries.",
             "type": "string"
@@ -154081,6 +154656,41 @@
                 "items": {
                   "description": "Case when signal is generated.",
                   "properties": {
+                    "actions": {
+                      "description": "Action to perform for each rule case.",
+                      "items": {
+                        "description": "Action to perform when a signal is triggered. Only available for Application Security rule type.",
+                        "properties": {
+                          "options": {
+                            "description": "Options for the rule action",
+                            "properties": {
+                              "duration": {
+                                "description": "Duration of the action in seconds. 0 indicates no expiration.",
+                                "example": 0,
+                                "format": "int64",
+                                "minimum": 0,
+                                "type": "integer"
+                              }
+                            },
+                            "type": "object"
+                          },
+                          "type": {
+                            "description": "The action type.",
+                            "enum": [
+                              "block_ip",
+                              "block_user"
+                            ],
+                            "type": "string",
+                            "x-enum-varnames": [
+                              "BLOCK_IP",
+                              "BLOCK_USER"
+                            ]
+                          }
+                        },
+                        "type": "object"
+                      },
+                      "type": "array"
+                    },
                     "condition": {
                       "description": "A case contains logical operations (`>`,`>=`, `&&`, `||`) to determine if a signal should be generated\nbased on the event counts in the previously defined queries.",
                       "type": "string"
@@ -154147,6 +154757,17 @@
                     }
                   },
                   "type": "object"
+                },
+                "type": "array"
+              },
+              "groupSignalsBy": {
+                "description": "Additional grouping to perform on top of the existing groups in the query section. Must be a subset of the existing groups.",
+                "example": [
+                  "service"
+                ],
+                "items": {
+                  "description": "Field to group by.",
+                  "type": "string"
                 },
                 "type": "array"
               },
@@ -154687,6 +155308,41 @@
                 "items": {
                   "description": "Case when signal is generated.",
                   "properties": {
+                    "actions": {
+                      "description": "Action to perform for each rule case.",
+                      "items": {
+                        "description": "Action to perform when a signal is triggered. Only available for Application Security rule type.",
+                        "properties": {
+                          "options": {
+                            "description": "Options for the rule action",
+                            "properties": {
+                              "duration": {
+                                "description": "Duration of the action in seconds. 0 indicates no expiration.",
+                                "example": 0,
+                                "format": "int64",
+                                "minimum": 0,
+                                "type": "integer"
+                              }
+                            },
+                            "type": "object"
+                          },
+                          "type": {
+                            "description": "The action type.",
+                            "enum": [
+                              "block_ip",
+                              "block_user"
+                            ],
+                            "type": "string",
+                            "x-enum-varnames": [
+                              "BLOCK_IP",
+                              "BLOCK_USER"
+                            ]
+                          }
+                        },
+                        "type": "object"
+                      },
+                      "type": "array"
+                    },
                     "condition": {
                       "description": "A case contains logical operations (`>`,`>=`, `&&`, `||`) to determine if a signal should be generated\nbased on the event counts in the previously defined queries.",
                       "type": "string"
@@ -155215,6 +155871,41 @@
                 "items": {
                   "description": "Case when signal is generated.",
                   "properties": {
+                    "actions": {
+                      "description": "Action to perform for each rule case.",
+                      "items": {
+                        "description": "Action to perform when a signal is triggered. Only available for Application Security rule type.",
+                        "properties": {
+                          "options": {
+                            "description": "Options for the rule action",
+                            "properties": {
+                              "duration": {
+                                "description": "Duration of the action in seconds. 0 indicates no expiration.",
+                                "example": 0,
+                                "format": "int64",
+                                "minimum": 0,
+                                "type": "integer"
+                              }
+                            },
+                            "type": "object"
+                          },
+                          "type": {
+                            "description": "The action type.",
+                            "enum": [
+                              "block_ip",
+                              "block_user"
+                            ],
+                            "type": "string",
+                            "x-enum-varnames": [
+                              "BLOCK_IP",
+                              "BLOCK_USER"
+                            ]
+                          }
+                        },
+                        "type": "object"
+                      },
+                      "type": "array"
+                    },
                     "condition": {
                       "description": "A case contains logical operations (`>`,`>=`, `&&`, `||`) to determine if a signal should be generated\nbased on the event counts in the previously defined queries.",
                       "type": "string"
@@ -155281,6 +155972,17 @@
                     }
                   },
                   "type": "object"
+                },
+                "type": "array"
+              },
+              "groupSignalsBy": {
+                "description": "Additional grouping to perform on top of the existing groups in the query section. Must be a subset of the existing groups.",
+                "example": [
+                  "service"
+                ],
+                "items": {
+                  "description": "Field to group by.",
+                  "type": "string"
                 },
                 "type": "array"
               },
@@ -155821,6 +156523,41 @@
                 "items": {
                   "description": "Case when signal is generated.",
                   "properties": {
+                    "actions": {
+                      "description": "Action to perform for each rule case.",
+                      "items": {
+                        "description": "Action to perform when a signal is triggered. Only available for Application Security rule type.",
+                        "properties": {
+                          "options": {
+                            "description": "Options for the rule action",
+                            "properties": {
+                              "duration": {
+                                "description": "Duration of the action in seconds. 0 indicates no expiration.",
+                                "example": 0,
+                                "format": "int64",
+                                "minimum": 0,
+                                "type": "integer"
+                              }
+                            },
+                            "type": "object"
+                          },
+                          "type": {
+                            "description": "The action type.",
+                            "enum": [
+                              "block_ip",
+                              "block_user"
+                            ],
+                            "type": "string",
+                            "x-enum-varnames": [
+                              "BLOCK_IP",
+                              "BLOCK_USER"
+                            ]
+                          }
+                        },
+                        "type": "object"
+                      },
+                      "type": "array"
+                    },
                     "condition": {
                       "description": "A case contains logical operations (`>`,`>=`, `&&`, `||`) to determine if a signal should be generated\nbased on the event counts in the previously defined queries.",
                       "type": "string"
@@ -157374,6 +158111,41 @@
                 "items": {
                   "description": "Case when signal is generated.",
                   "properties": {
+                    "actions": {
+                      "description": "Action to perform for each rule case.",
+                      "items": {
+                        "description": "Action to perform when a signal is triggered. Only available for Application Security rule type.",
+                        "properties": {
+                          "options": {
+                            "description": "Options for the rule action",
+                            "properties": {
+                              "duration": {
+                                "description": "Duration of the action in seconds. 0 indicates no expiration.",
+                                "example": 0,
+                                "format": "int64",
+                                "minimum": 0,
+                                "type": "integer"
+                              }
+                            },
+                            "type": "object"
+                          },
+                          "type": {
+                            "description": "The action type.",
+                            "enum": [
+                              "block_ip",
+                              "block_user"
+                            ],
+                            "type": "string",
+                            "x-enum-varnames": [
+                              "BLOCK_IP",
+                              "BLOCK_USER"
+                            ]
+                          }
+                        },
+                        "type": "object"
+                      },
+                      "type": "array"
+                    },
                     "condition": {
                       "description": "A rule case contains logical operations (`>`,`>=`, `&&`, `||`) to determine if a signal should be generated\nbased on the event counts in the previously defined queries.",
                       "type": "string"
@@ -157495,6 +158267,17 @@
                     }
                   },
                   "type": "object"
+                },
+                "type": "array"
+              },
+              "groupSignalsBy": {
+                "description": "Additional grouping to perform on top of the existing groups in the query section. Must be a subset of the existing groups.",
+                "example": [
+                  "service"
+                ],
+                "items": {
+                  "description": "Field to group by.",
+                  "type": "string"
                 },
                 "type": "array"
               },
@@ -158044,6 +158827,41 @@
                 "items": {
                   "description": "Case when signal is generated.",
                   "properties": {
+                    "actions": {
+                      "description": "Action to perform for each rule case.",
+                      "items": {
+                        "description": "Action to perform when a signal is triggered. Only available for Application Security rule type.",
+                        "properties": {
+                          "options": {
+                            "description": "Options for the rule action",
+                            "properties": {
+                              "duration": {
+                                "description": "Duration of the action in seconds. 0 indicates no expiration.",
+                                "example": 0,
+                                "format": "int64",
+                                "minimum": 0,
+                                "type": "integer"
+                              }
+                            },
+                            "type": "object"
+                          },
+                          "type": {
+                            "description": "The action type.",
+                            "enum": [
+                              "block_ip",
+                              "block_user"
+                            ],
+                            "type": "string",
+                            "x-enum-varnames": [
+                              "BLOCK_IP",
+                              "BLOCK_USER"
+                            ]
+                          }
+                        },
+                        "type": "object"
+                      },
+                      "type": "array"
+                    },
                     "condition": {
                       "description": "A rule case contains logical operations (`>`,`>=`, `&&`, `||`) to determine if a signal should be generated\nbased on the event counts in the previously defined queries.",
                       "type": "string"
@@ -158615,6 +159433,41 @@
                 "items": {
                   "description": "Case when signal is generated.",
                   "properties": {
+                    "actions": {
+                      "description": "Action to perform for each rule case.",
+                      "items": {
+                        "description": "Action to perform when a signal is triggered. Only available for Application Security rule type.",
+                        "properties": {
+                          "options": {
+                            "description": "Options for the rule action",
+                            "properties": {
+                              "duration": {
+                                "description": "Duration of the action in seconds. 0 indicates no expiration.",
+                                "example": 0,
+                                "format": "int64",
+                                "minimum": 0,
+                                "type": "integer"
+                              }
+                            },
+                            "type": "object"
+                          },
+                          "type": {
+                            "description": "The action type.",
+                            "enum": [
+                              "block_ip",
+                              "block_user"
+                            ],
+                            "type": "string",
+                            "x-enum-varnames": [
+                              "BLOCK_IP",
+                              "BLOCK_USER"
+                            ]
+                          }
+                        },
+                        "type": "object"
+                      },
+                      "type": "array"
+                    },
                     "condition": {
                       "description": "A case contains logical operations (`>`,`>=`, `&&`, `||`) to determine if a signal should be generated\nbased on the event counts in the previously defined queries.",
                       "type": "string"
@@ -158681,6 +159534,17 @@
                     }
                   },
                   "type": "object"
+                },
+                "type": "array"
+              },
+              "groupSignalsBy": {
+                "description": "Additional grouping to perform on top of the existing groups in the query section. Must be a subset of the existing groups.",
+                "example": [
+                  "service"
+                ],
+                "items": {
+                  "description": "Field to group by.",
+                  "type": "string"
                 },
                 "type": "array"
               },
@@ -159225,6 +160089,41 @@
                     "items": {
                       "description": "Case when signal is generated.",
                       "properties": {
+                        "actions": {
+                          "description": "Action to perform for each rule case.",
+                          "items": {
+                            "description": "Action to perform when a signal is triggered. Only available for Application Security rule type.",
+                            "properties": {
+                              "options": {
+                                "description": "Options for the rule action",
+                                "properties": {
+                                  "duration": {
+                                    "description": "Duration of the action in seconds. 0 indicates no expiration.",
+                                    "example": 0,
+                                    "format": "int64",
+                                    "minimum": 0,
+                                    "type": "integer"
+                                  }
+                                },
+                                "type": "object"
+                              },
+                              "type": {
+                                "description": "The action type.",
+                                "enum": [
+                                  "block_ip",
+                                  "block_user"
+                                ],
+                                "type": "string",
+                                "x-enum-varnames": [
+                                  "BLOCK_IP",
+                                  "BLOCK_USER"
+                                ]
+                              }
+                            },
+                            "type": "object"
+                          },
+                          "type": "array"
+                        },
                         "condition": {
                           "description": "A case contains logical operations (`>`,`>=`, `&&`, `||`) to determine if a signal should be generated\nbased on the event counts in the previously defined queries.",
                           "type": "string"
@@ -159291,6 +160190,17 @@
                         }
                       },
                       "type": "object"
+                    },
+                    "type": "array"
+                  },
+                  "groupSignalsBy": {
+                    "description": "Additional grouping to perform on top of the existing groups in the query section. Must be a subset of the existing groups.",
+                    "example": [
+                      "service"
+                    ],
+                    "items": {
+                      "description": "Field to group by.",
+                      "type": "string"
                     },
                     "type": "array"
                   },
@@ -160000,6 +160910,41 @@
             "items": {
               "description": "Case when signal is generated.",
               "properties": {
+                "actions": {
+                  "description": "Action to perform for each rule case.",
+                  "items": {
+                    "description": "Action to perform when a signal is triggered. Only available for Application Security rule type.",
+                    "properties": {
+                      "options": {
+                        "description": "Options for the rule action",
+                        "properties": {
+                          "duration": {
+                            "description": "Duration of the action in seconds. 0 indicates no expiration.",
+                            "example": 0,
+                            "format": "int64",
+                            "minimum": 0,
+                            "type": "integer"
+                          }
+                        },
+                        "type": "object"
+                      },
+                      "type": {
+                        "description": "The action type.",
+                        "enum": [
+                          "block_ip",
+                          "block_user"
+                        ],
+                        "type": "string",
+                        "x-enum-varnames": [
+                          "BLOCK_IP",
+                          "BLOCK_USER"
+                        ]
+                      }
+                    },
+                    "type": "object"
+                  },
+                  "type": "array"
+                },
                 "condition": {
                   "description": "A rule case contains logical operations (`>`,`>=`, `&&`, `||`) to determine if a signal should be generated\nbased on the event counts in the previously defined queries.",
                   "type": "string"
@@ -160095,6 +161040,17 @@
                 }
               },
               "type": "object"
+            },
+            "type": "array"
+          },
+          "groupSignalsBy": {
+            "description": "Additional grouping to perform on top of the existing groups in the query section. Must be a subset of the existing groups.",
+            "example": [
+              "service"
+            ],
+            "items": {
+              "description": "Field to group by.",
+              "type": "string"
             },
             "type": "array"
           },
@@ -160681,6 +161637,41 @@
                 "items": {
                   "description": "Case when signal is generated.",
                   "properties": {
+                    "actions": {
+                      "description": "Action to perform for each rule case.",
+                      "items": {
+                        "description": "Action to perform when a signal is triggered. Only available for Application Security rule type.",
+                        "properties": {
+                          "options": {
+                            "description": "Options for the rule action",
+                            "properties": {
+                              "duration": {
+                                "description": "Duration of the action in seconds. 0 indicates no expiration.",
+                                "example": 0,
+                                "format": "int64",
+                                "minimum": 0,
+                                "type": "integer"
+                              }
+                            },
+                            "type": "object"
+                          },
+                          "type": {
+                            "description": "The action type.",
+                            "enum": [
+                              "block_ip",
+                              "block_user"
+                            ],
+                            "type": "string",
+                            "x-enum-varnames": [
+                              "BLOCK_IP",
+                              "BLOCK_USER"
+                            ]
+                          }
+                        },
+                        "type": "object"
+                      },
+                      "type": "array"
+                    },
                     "condition": {
                       "description": "A case contains logical operations (`>`,`>=`, `&&`, `||`) to determine if a signal should be generated\nbased on the event counts in the previously defined queries.",
                       "type": "string"
@@ -160747,6 +161738,17 @@
                     }
                   },
                   "type": "object"
+                },
+                "type": "array"
+              },
+              "groupSignalsBy": {
+                "description": "Additional grouping to perform on top of the existing groups in the query section. Must be a subset of the existing groups.",
+                "example": [
+                  "service"
+                ],
+                "items": {
+                  "description": "Field to group by.",
+                  "type": "string"
                 },
                 "type": "array"
               },
@@ -161287,6 +162289,41 @@
                 "items": {
                   "description": "Case when signal is generated.",
                   "properties": {
+                    "actions": {
+                      "description": "Action to perform for each rule case.",
+                      "items": {
+                        "description": "Action to perform when a signal is triggered. Only available for Application Security rule type.",
+                        "properties": {
+                          "options": {
+                            "description": "Options for the rule action",
+                            "properties": {
+                              "duration": {
+                                "description": "Duration of the action in seconds. 0 indicates no expiration.",
+                                "example": 0,
+                                "format": "int64",
+                                "minimum": 0,
+                                "type": "integer"
+                              }
+                            },
+                            "type": "object"
+                          },
+                          "type": {
+                            "description": "The action type.",
+                            "enum": [
+                              "block_ip",
+                              "block_user"
+                            ],
+                            "type": "string",
+                            "x-enum-varnames": [
+                              "BLOCK_IP",
+                              "BLOCK_USER"
+                            ]
+                          }
+                        },
+                        "type": "object"
+                      },
+                      "type": "array"
+                    },
                     "condition": {
                       "description": "A case contains logical operations (`>`,`>=`, `&&`, `||`) to determine if a signal should be generated\nbased on the event counts in the previously defined queries.",
                       "type": "string"
@@ -162620,6 +163657,41 @@
             "items": {
               "description": "Case when signal is generated.",
               "properties": {
+                "actions": {
+                  "description": "Action to perform for each rule case.",
+                  "items": {
+                    "description": "Action to perform when a signal is triggered. Only available for Application Security rule type.",
+                    "properties": {
+                      "options": {
+                        "description": "Options for the rule action",
+                        "properties": {
+                          "duration": {
+                            "description": "Duration of the action in seconds. 0 indicates no expiration.",
+                            "example": 0,
+                            "format": "int64",
+                            "minimum": 0,
+                            "type": "integer"
+                          }
+                        },
+                        "type": "object"
+                      },
+                      "type": {
+                        "description": "The action type.",
+                        "enum": [
+                          "block_ip",
+                          "block_user"
+                        ],
+                        "type": "string",
+                        "x-enum-varnames": [
+                          "BLOCK_IP",
+                          "BLOCK_USER"
+                        ]
+                      }
+                    },
+                    "type": "object"
+                  },
+                  "type": "array"
+                },
                 "condition": {
                   "description": "A case contains logical operations (`>`,`>=`, `&&`, `||`) to determine if a signal should be generated\nbased on the event counts in the previously defined queries.",
                   "type": "string"
@@ -163133,6 +164205,41 @@
             "items": {
               "description": "Case when signal is generated.",
               "properties": {
+                "actions": {
+                  "description": "Action to perform for each rule case.",
+                  "items": {
+                    "description": "Action to perform when a signal is triggered. Only available for Application Security rule type.",
+                    "properties": {
+                      "options": {
+                        "description": "Options for the rule action",
+                        "properties": {
+                          "duration": {
+                            "description": "Duration of the action in seconds. 0 indicates no expiration.",
+                            "example": 0,
+                            "format": "int64",
+                            "minimum": 0,
+                            "type": "integer"
+                          }
+                        },
+                        "type": "object"
+                      },
+                      "type": {
+                        "description": "The action type.",
+                        "enum": [
+                          "block_ip",
+                          "block_user"
+                        ],
+                        "type": "string",
+                        "x-enum-varnames": [
+                          "BLOCK_IP",
+                          "BLOCK_USER"
+                        ]
+                      }
+                    },
+                    "type": "object"
+                  },
+                  "type": "array"
+                },
                 "condition": {
                   "description": "A case contains logical operations (`>`,`>=`, `&&`, `||`) to determine if a signal should be generated\nbased on the event counts in the previously defined queries.",
                   "type": "string"
@@ -163709,6 +164816,41 @@
             "items": {
               "description": "Case when signal is generated.",
               "properties": {
+                "actions": {
+                  "description": "Action to perform for each rule case.",
+                  "items": {
+                    "description": "Action to perform when a signal is triggered. Only available for Application Security rule type.",
+                    "properties": {
+                      "options": {
+                        "description": "Options for the rule action",
+                        "properties": {
+                          "duration": {
+                            "description": "Duration of the action in seconds. 0 indicates no expiration.",
+                            "example": 0,
+                            "format": "int64",
+                            "minimum": 0,
+                            "type": "integer"
+                          }
+                        },
+                        "type": "object"
+                      },
+                      "type": {
+                        "description": "The action type.",
+                        "enum": [
+                          "block_ip",
+                          "block_user"
+                        ],
+                        "type": "string",
+                        "x-enum-varnames": [
+                          "BLOCK_IP",
+                          "BLOCK_USER"
+                        ]
+                      }
+                    },
+                    "type": "object"
+                  },
+                  "type": "array"
+                },
                 "condition": {
                   "description": "A rule case contains logical operations (`>`,`>=`, `&&`, `||`) to determine if a signal should be generated\nbased on the event counts in the previously defined queries.",
                   "type": "string"
@@ -165326,6 +166468,41 @@
             "items": {
               "description": "Case when signal is generated.",
               "properties": {
+                "actions": {
+                  "description": "Action to perform for each rule case.",
+                  "items": {
+                    "description": "Action to perform when a signal is triggered. Only available for Application Security rule type.",
+                    "properties": {
+                      "options": {
+                        "description": "Options for the rule action",
+                        "properties": {
+                          "duration": {
+                            "description": "Duration of the action in seconds. 0 indicates no expiration.",
+                            "example": 0,
+                            "format": "int64",
+                            "minimum": 0,
+                            "type": "integer"
+                          }
+                        },
+                        "type": "object"
+                      },
+                      "type": {
+                        "description": "The action type.",
+                        "enum": [
+                          "block_ip",
+                          "block_user"
+                        ],
+                        "type": "string",
+                        "x-enum-varnames": [
+                          "BLOCK_IP",
+                          "BLOCK_USER"
+                        ]
+                      }
+                    },
+                    "type": "object"
+                  },
+                  "type": "array"
+                },
                 "condition": {
                   "description": "A case contains logical operations (`>`,`>=`, `&&`, `||`) to determine if a signal should be generated\nbased on the event counts in the previously defined queries.",
                   "type": "string"
@@ -165392,6 +166569,17 @@
                 }
               },
               "type": "object"
+            },
+            "type": "array"
+          },
+          "groupSignalsBy": {
+            "description": "Additional grouping to perform on top of the existing groups in the query section. Must be a subset of the existing groups.",
+            "example": [
+              "service"
+            ],
+            "items": {
+              "description": "Field to group by.",
+              "type": "string"
             },
             "type": "array"
           },
@@ -165932,6 +167120,41 @@
             "items": {
               "description": "Case when signal is generated.",
               "properties": {
+                "actions": {
+                  "description": "Action to perform for each rule case.",
+                  "items": {
+                    "description": "Action to perform when a signal is triggered. Only available for Application Security rule type.",
+                    "properties": {
+                      "options": {
+                        "description": "Options for the rule action",
+                        "properties": {
+                          "duration": {
+                            "description": "Duration of the action in seconds. 0 indicates no expiration.",
+                            "example": 0,
+                            "format": "int64",
+                            "minimum": 0,
+                            "type": "integer"
+                          }
+                        },
+                        "type": "object"
+                      },
+                      "type": {
+                        "description": "The action type.",
+                        "enum": [
+                          "block_ip",
+                          "block_user"
+                        ],
+                        "type": "string",
+                        "x-enum-varnames": [
+                          "BLOCK_IP",
+                          "BLOCK_USER"
+                        ]
+                      }
+                    },
+                    "type": "object"
+                  },
+                  "type": "array"
+                },
                 "condition": {
                   "description": "A case contains logical operations (`>`,`>=`, `&&`, `||`) to determine if a signal should be generated\nbased on the event counts in the previously defined queries.",
                   "type": "string"
@@ -165998,6 +167221,17 @@
                 }
               },
               "type": "object"
+            },
+            "type": "array"
+          },
+          "groupSignalsBy": {
+            "description": "Additional grouping to perform on top of the existing groups in the query section. Must be a subset of the existing groups.",
+            "example": [
+              "service"
+            ],
+            "items": {
+              "description": "Field to group by.",
+              "type": "string"
             },
             "type": "array"
           },
@@ -166611,6 +167845,41 @@
             "items": {
               "description": "Case when signal is generated.",
               "properties": {
+                "actions": {
+                  "description": "Action to perform for each rule case.",
+                  "items": {
+                    "description": "Action to perform when a signal is triggered. Only available for Application Security rule type.",
+                    "properties": {
+                      "options": {
+                        "description": "Options for the rule action",
+                        "properties": {
+                          "duration": {
+                            "description": "Duration of the action in seconds. 0 indicates no expiration.",
+                            "example": 0,
+                            "format": "int64",
+                            "minimum": 0,
+                            "type": "integer"
+                          }
+                        },
+                        "type": "object"
+                      },
+                      "type": {
+                        "description": "The action type.",
+                        "enum": [
+                          "block_ip",
+                          "block_user"
+                        ],
+                        "type": "string",
+                        "x-enum-varnames": [
+                          "BLOCK_IP",
+                          "BLOCK_USER"
+                        ]
+                      }
+                    },
+                    "type": "object"
+                  },
+                  "type": "array"
+                },
                 "condition": {
                   "description": "A rule case contains logical operations (`>`,`>=`, `&&`, `||`) to determine if a signal should be generated\nbased on the event counts in the previously defined queries.",
                   "type": "string"
@@ -166732,6 +168001,17 @@
                 }
               },
               "type": "object"
+            },
+            "type": "array"
+          },
+          "groupSignalsBy": {
+            "description": "Additional grouping to perform on top of the existing groups in the query section. Must be a subset of the existing groups.",
+            "example": [
+              "service"
+            ],
+            "items": {
+              "description": "Field to group by.",
+              "type": "string"
             },
             "type": "array"
           },
@@ -167282,6 +168562,41 @@
             "items": {
               "description": "Case when signal is generated.",
               "properties": {
+                "actions": {
+                  "description": "Action to perform for each rule case.",
+                  "items": {
+                    "description": "Action to perform when a signal is triggered. Only available for Application Security rule type.",
+                    "properties": {
+                      "options": {
+                        "description": "Options for the rule action",
+                        "properties": {
+                          "duration": {
+                            "description": "Duration of the action in seconds. 0 indicates no expiration.",
+                            "example": 0,
+                            "format": "int64",
+                            "minimum": 0,
+                            "type": "integer"
+                          }
+                        },
+                        "type": "object"
+                      },
+                      "type": {
+                        "description": "The action type.",
+                        "enum": [
+                          "block_ip",
+                          "block_user"
+                        ],
+                        "type": "string",
+                        "x-enum-varnames": [
+                          "BLOCK_IP",
+                          "BLOCK_USER"
+                        ]
+                      }
+                    },
+                    "type": "object"
+                  },
+                  "type": "array"
+                },
                 "condition": {
                   "description": "A case contains logical operations (`>`,`>=`, `&&`, `||`) to determine if a signal should be generated\nbased on the event counts in the previously defined queries.",
                   "type": "string"
@@ -167348,6 +168663,17 @@
                 }
               },
               "type": "object"
+            },
+            "type": "array"
+          },
+          "groupSignalsBy": {
+            "description": "Additional grouping to perform on top of the existing groups in the query section. Must be a subset of the existing groups.",
+            "example": [
+              "service"
+            ],
+            "items": {
+              "description": "Field to group by.",
+              "type": "string"
             },
             "type": "array"
           },
@@ -295736,7 +297062,7 @@
         "operationId": "DeleteConfluentAccount",
         "parameters": [
           {
-            "description": "Confluent Account id.",
+            "description": "Confluent Account ID.",
             "in": "path",
             "name": "account_id",
             "required": true,
@@ -295882,7 +297208,7 @@
         "operationId": "GetConfluentAccount",
         "parameters": [
           {
-            "description": "Confluent Account id.",
+            "description": "Confluent Account ID.",
             "in": "path",
             "name": "account_id",
             "required": true,
@@ -296137,7 +297463,7 @@
         "operationId": "UpdateConfluentAccount",
         "parameters": [
           {
-            "description": "Confluent Account id.",
+            "description": "Confluent Account ID.",
             "in": "path",
             "name": "account_id",
             "required": true,
@@ -296468,7 +297794,7 @@
         "operationId": "ListConfluentResource",
         "parameters": [
           {
-            "description": "Confluent Account id.",
+            "description": "Confluent Account ID.",
             "in": "path",
             "name": "account_id",
             "required": true,
@@ -296698,7 +298024,7 @@
         "operationId": "CreateConfluentResource",
         "parameters": [
           {
-            "description": "Confluent Account id.",
+            "description": "Confluent Account ID.",
             "in": "path",
             "name": "account_id",
             "required": true,
@@ -297006,7 +298332,7 @@
         "operationId": "DeleteConfluentResource",
         "parameters": [
           {
-            "description": "Confluent Account id.",
+            "description": "Confluent Account ID.",
             "in": "path",
             "name": "account_id",
             "required": true,
@@ -297161,7 +298487,7 @@
         "operationId": "GetConfluentResource",
         "parameters": [
           {
-            "description": "Confluent Account id.",
+            "description": "Confluent Account ID.",
             "in": "path",
             "name": "account_id",
             "required": true,
@@ -297396,7 +298722,7 @@
         "operationId": "UpdateConfluentResource",
         "parameters": [
           {
-            "description": "Confluent Account id.",
+            "description": "Confluent Account ID.",
             "in": "path",
             "name": "account_id",
             "required": true,
@@ -354831,6 +356157,41 @@
                                 "items": {
                                   "description": "Case when signal is generated.",
                                   "properties": {
+                                    "actions": {
+                                      "description": "Action to perform for each rule case.",
+                                      "items": {
+                                        "description": "Action to perform when a signal is triggered. Only available for Application Security rule type.",
+                                        "properties": {
+                                          "options": {
+                                            "description": "Options for the rule action",
+                                            "properties": {
+                                              "duration": {
+                                                "description": "Duration of the action in seconds. 0 indicates no expiration.",
+                                                "example": 0,
+                                                "format": "int64",
+                                                "minimum": 0,
+                                                "type": "integer"
+                                              }
+                                            },
+                                            "type": "object"
+                                          },
+                                          "type": {
+                                            "description": "The action type.",
+                                            "enum": [
+                                              "block_ip",
+                                              "block_user"
+                                            ],
+                                            "type": "string",
+                                            "x-enum-varnames": [
+                                              "BLOCK_IP",
+                                              "BLOCK_USER"
+                                            ]
+                                          }
+                                        },
+                                        "type": "object"
+                                      },
+                                      "type": "array"
+                                    },
                                     "condition": {
                                       "description": "A rule case contains logical operations (`>`,`>=`, `&&`, `||`) to determine if a signal should be generated\nbased on the event counts in the previously defined queries.",
                                       "type": "string"
@@ -354952,6 +356313,17 @@
                                     }
                                   },
                                   "type": "object"
+                                },
+                                "type": "array"
+                              },
+                              "groupSignalsBy": {
+                                "description": "Additional grouping to perform on top of the existing groups in the query section. Must be a subset of the existing groups.",
+                                "example": [
+                                  "service"
+                                ],
+                                "items": {
+                                  "description": "Field to group by.",
+                                  "type": "string"
                                 },
                                 "type": "array"
                               },
@@ -355501,6 +356873,41 @@
                                 "items": {
                                   "description": "Case when signal is generated.",
                                   "properties": {
+                                    "actions": {
+                                      "description": "Action to perform for each rule case.",
+                                      "items": {
+                                        "description": "Action to perform when a signal is triggered. Only available for Application Security rule type.",
+                                        "properties": {
+                                          "options": {
+                                            "description": "Options for the rule action",
+                                            "properties": {
+                                              "duration": {
+                                                "description": "Duration of the action in seconds. 0 indicates no expiration.",
+                                                "example": 0,
+                                                "format": "int64",
+                                                "minimum": 0,
+                                                "type": "integer"
+                                              }
+                                            },
+                                            "type": "object"
+                                          },
+                                          "type": {
+                                            "description": "The action type.",
+                                            "enum": [
+                                              "block_ip",
+                                              "block_user"
+                                            ],
+                                            "type": "string",
+                                            "x-enum-varnames": [
+                                              "BLOCK_IP",
+                                              "BLOCK_USER"
+                                            ]
+                                          }
+                                        },
+                                        "type": "object"
+                                      },
+                                      "type": "array"
+                                    },
                                     "condition": {
                                       "description": "A rule case contains logical operations (`>`,`>=`, `&&`, `||`) to determine if a signal should be generated\nbased on the event counts in the previously defined queries.",
                                       "type": "string"
@@ -356176,6 +357583,41 @@
                         "items": {
                           "description": "Case when signal is generated.",
                           "properties": {
+                            "actions": {
+                              "description": "Action to perform for each rule case.",
+                              "items": {
+                                "description": "Action to perform when a signal is triggered. Only available for Application Security rule type.",
+                                "properties": {
+                                  "options": {
+                                    "description": "Options for the rule action",
+                                    "properties": {
+                                      "duration": {
+                                        "description": "Duration of the action in seconds. 0 indicates no expiration.",
+                                        "example": 0,
+                                        "format": "int64",
+                                        "minimum": 0,
+                                        "type": "integer"
+                                      }
+                                    },
+                                    "type": "object"
+                                  },
+                                  "type": {
+                                    "description": "The action type.",
+                                    "enum": [
+                                      "block_ip",
+                                      "block_user"
+                                    ],
+                                    "type": "string",
+                                    "x-enum-varnames": [
+                                      "BLOCK_IP",
+                                      "BLOCK_USER"
+                                    ]
+                                  }
+                                },
+                                "type": "object"
+                              },
+                              "type": "array"
+                            },
                             "condition": {
                               "description": "A case contains logical operations (`>`,`>=`, `&&`, `||`) to determine if a signal should be generated\nbased on the event counts in the previously defined queries.",
                               "type": "string"
@@ -356242,6 +357684,17 @@
                             }
                           },
                           "type": "object"
+                        },
+                        "type": "array"
+                      },
+                      "groupSignalsBy": {
+                        "description": "Additional grouping to perform on top of the existing groups in the query section. Must be a subset of the existing groups.",
+                        "example": [
+                          "service"
+                        ],
+                        "items": {
+                          "description": "Field to group by.",
+                          "type": "string"
                         },
                         "type": "array"
                       },
@@ -356782,6 +358235,41 @@
                         "items": {
                           "description": "Case when signal is generated.",
                           "properties": {
+                            "actions": {
+                              "description": "Action to perform for each rule case.",
+                              "items": {
+                                "description": "Action to perform when a signal is triggered. Only available for Application Security rule type.",
+                                "properties": {
+                                  "options": {
+                                    "description": "Options for the rule action",
+                                    "properties": {
+                                      "duration": {
+                                        "description": "Duration of the action in seconds. 0 indicates no expiration.",
+                                        "example": 0,
+                                        "format": "int64",
+                                        "minimum": 0,
+                                        "type": "integer"
+                                      }
+                                    },
+                                    "type": "object"
+                                  },
+                                  "type": {
+                                    "description": "The action type.",
+                                    "enum": [
+                                      "block_ip",
+                                      "block_user"
+                                    ],
+                                    "type": "string",
+                                    "x-enum-varnames": [
+                                      "BLOCK_IP",
+                                      "BLOCK_USER"
+                                    ]
+                                  }
+                                },
+                                "type": "object"
+                              },
+                              "type": "array"
+                            },
                             "condition": {
                               "description": "A case contains logical operations (`>`,`>=`, `&&`, `||`) to determine if a signal should be generated\nbased on the event counts in the previously defined queries.",
                               "type": "string"
@@ -357507,6 +358995,41 @@
                           "items": {
                             "description": "Case when signal is generated.",
                             "properties": {
+                              "actions": {
+                                "description": "Action to perform for each rule case.",
+                                "items": {
+                                  "description": "Action to perform when a signal is triggered. Only available for Application Security rule type.",
+                                  "properties": {
+                                    "options": {
+                                      "description": "Options for the rule action",
+                                      "properties": {
+                                        "duration": {
+                                          "description": "Duration of the action in seconds. 0 indicates no expiration.",
+                                          "example": 0,
+                                          "format": "int64",
+                                          "minimum": 0,
+                                          "type": "integer"
+                                        }
+                                      },
+                                      "type": "object"
+                                    },
+                                    "type": {
+                                      "description": "The action type.",
+                                      "enum": [
+                                        "block_ip",
+                                        "block_user"
+                                      ],
+                                      "type": "string",
+                                      "x-enum-varnames": [
+                                        "BLOCK_IP",
+                                        "BLOCK_USER"
+                                      ]
+                                    }
+                                  },
+                                  "type": "object"
+                                },
+                                "type": "array"
+                              },
                               "condition": {
                                 "description": "A rule case contains logical operations (`>`,`>=`, `&&`, `||`) to determine if a signal should be generated\nbased on the event counts in the previously defined queries.",
                                 "type": "string"
@@ -357628,6 +359151,17 @@
                               }
                             },
                             "type": "object"
+                          },
+                          "type": "array"
+                        },
+                        "groupSignalsBy": {
+                          "description": "Additional grouping to perform on top of the existing groups in the query section. Must be a subset of the existing groups.",
+                          "example": [
+                            "service"
+                          ],
+                          "items": {
+                            "description": "Field to group by.",
+                            "type": "string"
                           },
                           "type": "array"
                         },
@@ -358177,6 +359711,41 @@
                           "items": {
                             "description": "Case when signal is generated.",
                             "properties": {
+                              "actions": {
+                                "description": "Action to perform for each rule case.",
+                                "items": {
+                                  "description": "Action to perform when a signal is triggered. Only available for Application Security rule type.",
+                                  "properties": {
+                                    "options": {
+                                      "description": "Options for the rule action",
+                                      "properties": {
+                                        "duration": {
+                                          "description": "Duration of the action in seconds. 0 indicates no expiration.",
+                                          "example": 0,
+                                          "format": "int64",
+                                          "minimum": 0,
+                                          "type": "integer"
+                                        }
+                                      },
+                                      "type": "object"
+                                    },
+                                    "type": {
+                                      "description": "The action type.",
+                                      "enum": [
+                                        "block_ip",
+                                        "block_user"
+                                      ],
+                                      "type": "string",
+                                      "x-enum-varnames": [
+                                        "BLOCK_IP",
+                                        "BLOCK_USER"
+                                      ]
+                                    }
+                                  },
+                                  "type": "object"
+                                },
+                                "type": "array"
+                              },
                               "condition": {
                                 "description": "A rule case contains logical operations (`>`,`>=`, `&&`, `||`) to determine if a signal should be generated\nbased on the event counts in the previously defined queries.",
                                 "type": "string"
@@ -358889,6 +360458,41 @@
                         "items": {
                           "description": "Case when signal is generated.",
                           "properties": {
+                            "actions": {
+                              "description": "Action to perform for each rule case.",
+                              "items": {
+                                "description": "Action to perform when a signal is triggered. Only available for Application Security rule type.",
+                                "properties": {
+                                  "options": {
+                                    "description": "Options for the rule action",
+                                    "properties": {
+                                      "duration": {
+                                        "description": "Duration of the action in seconds. 0 indicates no expiration.",
+                                        "example": 0,
+                                        "format": "int64",
+                                        "minimum": 0,
+                                        "type": "integer"
+                                      }
+                                    },
+                                    "type": "object"
+                                  },
+                                  "type": {
+                                    "description": "The action type.",
+                                    "enum": [
+                                      "block_ip",
+                                      "block_user"
+                                    ],
+                                    "type": "string",
+                                    "x-enum-varnames": [
+                                      "BLOCK_IP",
+                                      "BLOCK_USER"
+                                    ]
+                                  }
+                                },
+                                "type": "object"
+                              },
+                              "type": "array"
+                            },
                             "condition": {
                               "description": "A case contains logical operations (`>`,`>=`, `&&`, `||`) to determine if a signal should be generated\nbased on the event counts in the previously defined queries.",
                               "type": "string"
@@ -358955,6 +360559,17 @@
                             }
                           },
                           "type": "object"
+                        },
+                        "type": "array"
+                      },
+                      "groupSignalsBy": {
+                        "description": "Additional grouping to perform on top of the existing groups in the query section. Must be a subset of the existing groups.",
+                        "example": [
+                          "service"
+                        ],
+                        "items": {
+                          "description": "Field to group by.",
+                          "type": "string"
                         },
                         "type": "array"
                       },
@@ -359495,6 +361110,41 @@
                         "items": {
                           "description": "Case when signal is generated.",
                           "properties": {
+                            "actions": {
+                              "description": "Action to perform for each rule case.",
+                              "items": {
+                                "description": "Action to perform when a signal is triggered. Only available for Application Security rule type.",
+                                "properties": {
+                                  "options": {
+                                    "description": "Options for the rule action",
+                                    "properties": {
+                                      "duration": {
+                                        "description": "Duration of the action in seconds. 0 indicates no expiration.",
+                                        "example": 0,
+                                        "format": "int64",
+                                        "minimum": 0,
+                                        "type": "integer"
+                                      }
+                                    },
+                                    "type": "object"
+                                  },
+                                  "type": {
+                                    "description": "The action type.",
+                                    "enum": [
+                                      "block_ip",
+                                      "block_user"
+                                    ],
+                                    "type": "string",
+                                    "x-enum-varnames": [
+                                      "BLOCK_IP",
+                                      "BLOCK_USER"
+                                    ]
+                                  }
+                                },
+                                "type": "object"
+                              },
+                              "type": "array"
+                            },
                             "condition": {
                               "description": "A case contains logical operations (`>`,`>=`, `&&`, `||`) to determine if a signal should be generated\nbased on the event counts in the previously defined queries.",
                               "type": "string"
@@ -360214,6 +361864,41 @@
                             "items": {
                               "description": "Case when signal is generated.",
                               "properties": {
+                                "actions": {
+                                  "description": "Action to perform for each rule case.",
+                                  "items": {
+                                    "description": "Action to perform when a signal is triggered. Only available for Application Security rule type.",
+                                    "properties": {
+                                      "options": {
+                                        "description": "Options for the rule action",
+                                        "properties": {
+                                          "duration": {
+                                            "description": "Duration of the action in seconds. 0 indicates no expiration.",
+                                            "example": 0,
+                                            "format": "int64",
+                                            "minimum": 0,
+                                            "type": "integer"
+                                          }
+                                        },
+                                        "type": "object"
+                                      },
+                                      "type": {
+                                        "description": "The action type.",
+                                        "enum": [
+                                          "block_ip",
+                                          "block_user"
+                                        ],
+                                        "type": "string",
+                                        "x-enum-varnames": [
+                                          "BLOCK_IP",
+                                          "BLOCK_USER"
+                                        ]
+                                      }
+                                    },
+                                    "type": "object"
+                                  },
+                                  "type": "array"
+                                },
                                 "condition": {
                                   "description": "A case contains logical operations (`>`,`>=`, `&&`, `||`) to determine if a signal should be generated\nbased on the event counts in the previously defined queries.",
                                   "type": "string"
@@ -360280,6 +361965,17 @@
                                 }
                               },
                               "type": "object"
+                            },
+                            "type": "array"
+                          },
+                          "groupSignalsBy": {
+                            "description": "Additional grouping to perform on top of the existing groups in the query section. Must be a subset of the existing groups.",
+                            "example": [
+                              "service"
+                            ],
+                            "items": {
+                              "description": "Field to group by.",
+                              "type": "string"
                             },
                             "type": "array"
                           },
@@ -361079,6 +362775,41 @@
                         "items": {
                           "description": "Case when signal is generated.",
                           "properties": {
+                            "actions": {
+                              "description": "Action to perform for each rule case.",
+                              "items": {
+                                "description": "Action to perform when a signal is triggered. Only available for Application Security rule type.",
+                                "properties": {
+                                  "options": {
+                                    "description": "Options for the rule action",
+                                    "properties": {
+                                      "duration": {
+                                        "description": "Duration of the action in seconds. 0 indicates no expiration.",
+                                        "example": 0,
+                                        "format": "int64",
+                                        "minimum": 0,
+                                        "type": "integer"
+                                      }
+                                    },
+                                    "type": "object"
+                                  },
+                                  "type": {
+                                    "description": "The action type.",
+                                    "enum": [
+                                      "block_ip",
+                                      "block_user"
+                                    ],
+                                    "type": "string",
+                                    "x-enum-varnames": [
+                                      "BLOCK_IP",
+                                      "BLOCK_USER"
+                                    ]
+                                  }
+                                },
+                                "type": "object"
+                              },
+                              "type": "array"
+                            },
                             "condition": {
                               "description": "A case contains logical operations (`>`,`>=`, `&&`, `||`) to determine if a signal should be generated\nbased on the event counts in the previously defined queries.",
                               "type": "string"
@@ -361145,6 +362876,17 @@
                             }
                           },
                           "type": "object"
+                        },
+                        "type": "array"
+                      },
+                      "groupSignalsBy": {
+                        "description": "Additional grouping to perform on top of the existing groups in the query section. Must be a subset of the existing groups.",
+                        "example": [
+                          "service"
+                        ],
+                        "items": {
+                          "description": "Field to group by.",
+                          "type": "string"
                         },
                         "type": "array"
                       },
@@ -361685,6 +363427,41 @@
                         "items": {
                           "description": "Case when signal is generated.",
                           "properties": {
+                            "actions": {
+                              "description": "Action to perform for each rule case.",
+                              "items": {
+                                "description": "Action to perform when a signal is triggered. Only available for Application Security rule type.",
+                                "properties": {
+                                  "options": {
+                                    "description": "Options for the rule action",
+                                    "properties": {
+                                      "duration": {
+                                        "description": "Duration of the action in seconds. 0 indicates no expiration.",
+                                        "example": 0,
+                                        "format": "int64",
+                                        "minimum": 0,
+                                        "type": "integer"
+                                      }
+                                    },
+                                    "type": "object"
+                                  },
+                                  "type": {
+                                    "description": "The action type.",
+                                    "enum": [
+                                      "block_ip",
+                                      "block_user"
+                                    ],
+                                    "type": "string",
+                                    "x-enum-varnames": [
+                                      "BLOCK_IP",
+                                      "BLOCK_USER"
+                                    ]
+                                  }
+                                },
+                                "type": "object"
+                              },
+                              "type": "array"
+                            },
                             "condition": {
                               "description": "A case contains logical operations (`>`,`>=`, `&&`, `||`) to determine if a signal should be generated\nbased on the event counts in the previously defined queries.",
                               "type": "string"
@@ -362671,6 +364448,41 @@
                           "items": {
                             "description": "Case when signal is generated.",
                             "properties": {
+                              "actions": {
+                                "description": "Action to perform for each rule case.",
+                                "items": {
+                                  "description": "Action to perform when a signal is triggered. Only available for Application Security rule type.",
+                                  "properties": {
+                                    "options": {
+                                      "description": "Options for the rule action",
+                                      "properties": {
+                                        "duration": {
+                                          "description": "Duration of the action in seconds. 0 indicates no expiration.",
+                                          "example": 0,
+                                          "format": "int64",
+                                          "minimum": 0,
+                                          "type": "integer"
+                                        }
+                                      },
+                                      "type": "object"
+                                    },
+                                    "type": {
+                                      "description": "The action type.",
+                                      "enum": [
+                                        "block_ip",
+                                        "block_user"
+                                      ],
+                                      "type": "string",
+                                      "x-enum-varnames": [
+                                        "BLOCK_IP",
+                                        "BLOCK_USER"
+                                      ]
+                                    }
+                                  },
+                                  "type": "object"
+                                },
+                                "type": "array"
+                              },
                               "condition": {
                                 "description": "A rule case contains logical operations (`>`,`>=`, `&&`, `||`) to determine if a signal should be generated\nbased on the event counts in the previously defined queries.",
                                 "type": "string"
@@ -362792,6 +364604,17 @@
                               }
                             },
                             "type": "object"
+                          },
+                          "type": "array"
+                        },
+                        "groupSignalsBy": {
+                          "description": "Additional grouping to perform on top of the existing groups in the query section. Must be a subset of the existing groups.",
+                          "example": [
+                            "service"
+                          ],
+                          "items": {
+                            "description": "Field to group by.",
+                            "type": "string"
                           },
                           "type": "array"
                         },
@@ -363341,6 +365164,41 @@
                           "items": {
                             "description": "Case when signal is generated.",
                             "properties": {
+                              "actions": {
+                                "description": "Action to perform for each rule case.",
+                                "items": {
+                                  "description": "Action to perform when a signal is triggered. Only available for Application Security rule type.",
+                                  "properties": {
+                                    "options": {
+                                      "description": "Options for the rule action",
+                                      "properties": {
+                                        "duration": {
+                                          "description": "Duration of the action in seconds. 0 indicates no expiration.",
+                                          "example": 0,
+                                          "format": "int64",
+                                          "minimum": 0,
+                                          "type": "integer"
+                                        }
+                                      },
+                                      "type": "object"
+                                    },
+                                    "type": {
+                                      "description": "The action type.",
+                                      "enum": [
+                                        "block_ip",
+                                        "block_user"
+                                      ],
+                                      "type": "string",
+                                      "x-enum-varnames": [
+                                        "BLOCK_IP",
+                                        "BLOCK_USER"
+                                      ]
+                                    }
+                                  },
+                                  "type": "object"
+                                },
+                                "type": "array"
+                              },
                               "condition": {
                                 "description": "A rule case contains logical operations (`>`,`>=`, `&&`, `||`) to determine if a signal should be generated\nbased on the event counts in the previously defined queries.",
                                 "type": "string"
@@ -363993,6 +365851,41 @@
                     "items": {
                       "description": "Case when signal is generated.",
                       "properties": {
+                        "actions": {
+                          "description": "Action to perform for each rule case.",
+                          "items": {
+                            "description": "Action to perform when a signal is triggered. Only available for Application Security rule type.",
+                            "properties": {
+                              "options": {
+                                "description": "Options for the rule action",
+                                "properties": {
+                                  "duration": {
+                                    "description": "Duration of the action in seconds. 0 indicates no expiration.",
+                                    "example": 0,
+                                    "format": "int64",
+                                    "minimum": 0,
+                                    "type": "integer"
+                                  }
+                                },
+                                "type": "object"
+                              },
+                              "type": {
+                                "description": "The action type.",
+                                "enum": [
+                                  "block_ip",
+                                  "block_user"
+                                ],
+                                "type": "string",
+                                "x-enum-varnames": [
+                                  "BLOCK_IP",
+                                  "BLOCK_USER"
+                                ]
+                              }
+                            },
+                            "type": "object"
+                          },
+                          "type": "array"
+                        },
                         "condition": {
                           "description": "A rule case contains logical operations (`>`,`>=`, `&&`, `||`) to determine if a signal should be generated\nbased on the event counts in the previously defined queries.",
                           "type": "string"
@@ -364088,6 +365981,17 @@
                         }
                       },
                       "type": "object"
+                    },
+                    "type": "array"
+                  },
+                  "groupSignalsBy": {
+                    "description": "Additional grouping to perform on top of the existing groups in the query section. Must be a subset of the existing groups.",
+                    "example": [
+                      "service"
+                    ],
+                    "items": {
+                      "description": "Field to group by.",
+                      "type": "string"
                     },
                     "type": "array"
                   },
@@ -364681,6 +366585,41 @@
                           "items": {
                             "description": "Case when signal is generated.",
                             "properties": {
+                              "actions": {
+                                "description": "Action to perform for each rule case.",
+                                "items": {
+                                  "description": "Action to perform when a signal is triggered. Only available for Application Security rule type.",
+                                  "properties": {
+                                    "options": {
+                                      "description": "Options for the rule action",
+                                      "properties": {
+                                        "duration": {
+                                          "description": "Duration of the action in seconds. 0 indicates no expiration.",
+                                          "example": 0,
+                                          "format": "int64",
+                                          "minimum": 0,
+                                          "type": "integer"
+                                        }
+                                      },
+                                      "type": "object"
+                                    },
+                                    "type": {
+                                      "description": "The action type.",
+                                      "enum": [
+                                        "block_ip",
+                                        "block_user"
+                                      ],
+                                      "type": "string",
+                                      "x-enum-varnames": [
+                                        "BLOCK_IP",
+                                        "BLOCK_USER"
+                                      ]
+                                    }
+                                  },
+                                  "type": "object"
+                                },
+                                "type": "array"
+                              },
                               "condition": {
                                 "description": "A rule case contains logical operations (`>`,`>=`, `&&`, `||`) to determine if a signal should be generated\nbased on the event counts in the previously defined queries.",
                                 "type": "string"
@@ -364802,6 +366741,17 @@
                               }
                             },
                             "type": "object"
+                          },
+                          "type": "array"
+                        },
+                        "groupSignalsBy": {
+                          "description": "Additional grouping to perform on top of the existing groups in the query section. Must be a subset of the existing groups.",
+                          "example": [
+                            "service"
+                          ],
+                          "items": {
+                            "description": "Field to group by.",
+                            "type": "string"
                           },
                           "type": "array"
                         },
@@ -365351,6 +367301,41 @@
                           "items": {
                             "description": "Case when signal is generated.",
                             "properties": {
+                              "actions": {
+                                "description": "Action to perform for each rule case.",
+                                "items": {
+                                  "description": "Action to perform when a signal is triggered. Only available for Application Security rule type.",
+                                  "properties": {
+                                    "options": {
+                                      "description": "Options for the rule action",
+                                      "properties": {
+                                        "duration": {
+                                          "description": "Duration of the action in seconds. 0 indicates no expiration.",
+                                          "example": 0,
+                                          "format": "int64",
+                                          "minimum": 0,
+                                          "type": "integer"
+                                        }
+                                      },
+                                      "type": "object"
+                                    },
+                                    "type": {
+                                      "description": "The action type.",
+                                      "enum": [
+                                        "block_ip",
+                                        "block_user"
+                                      ],
+                                      "type": "string",
+                                      "x-enum-varnames": [
+                                        "BLOCK_IP",
+                                        "BLOCK_USER"
+                                      ]
+                                    }
+                                  },
+                                  "type": "object"
+                                },
+                                "type": "array"
+                              },
                               "condition": {
                                 "description": "A rule case contains logical operations (`>`,`>=`, `&&`, `||`) to determine if a signal should be generated\nbased on the event counts in the previously defined queries.",
                                 "type": "string"
@@ -366270,6 +368255,41 @@
                             "items": {
                               "description": "Case when signal is generated.",
                               "properties": {
+                                "actions": {
+                                  "description": "Action to perform for each rule case.",
+                                  "items": {
+                                    "description": "Action to perform when a signal is triggered. Only available for Application Security rule type.",
+                                    "properties": {
+                                      "options": {
+                                        "description": "Options for the rule action",
+                                        "properties": {
+                                          "duration": {
+                                            "description": "Duration of the action in seconds. 0 indicates no expiration.",
+                                            "example": 0,
+                                            "format": "int64",
+                                            "minimum": 0,
+                                            "type": "integer"
+                                          }
+                                        },
+                                        "type": "object"
+                                      },
+                                      "type": {
+                                        "description": "The action type.",
+                                        "enum": [
+                                          "block_ip",
+                                          "block_user"
+                                        ],
+                                        "type": "string",
+                                        "x-enum-varnames": [
+                                          "BLOCK_IP",
+                                          "BLOCK_USER"
+                                        ]
+                                      }
+                                    },
+                                    "type": "object"
+                                  },
+                                  "type": "array"
+                                },
                                 "condition": {
                                   "description": "A case contains logical operations (`>`,`>=`, `&&`, `||`) to determine if a signal should be generated\nbased on the event counts in the previously defined queries.",
                                   "type": "string"
@@ -366336,6 +368356,17 @@
                                 }
                               },
                               "type": "object"
+                            },
+                            "type": "array"
+                          },
+                          "groupSignalsBy": {
+                            "description": "Additional grouping to perform on top of the existing groups in the query section. Must be a subset of the existing groups.",
+                            "example": [
+                              "service"
+                            ],
+                            "items": {
+                              "description": "Field to group by.",
+                              "type": "string"
                             },
                             "type": "array"
                           },
@@ -384449,6 +386480,41 @@
                                     "items": {
                                       "description": "Case when signal is generated.",
                                       "properties": {
+                                        "actions": {
+                                          "description": "Action to perform for each rule case.",
+                                          "items": {
+                                            "description": "Action to perform when a signal is triggered. Only available for Application Security rule type.",
+                                            "properties": {
+                                              "options": {
+                                                "description": "Options for the rule action",
+                                                "properties": {
+                                                  "duration": {
+                                                    "description": "Duration of the action in seconds. 0 indicates no expiration.",
+                                                    "example": 0,
+                                                    "format": "int64",
+                                                    "minimum": 0,
+                                                    "type": "integer"
+                                                  }
+                                                },
+                                                "type": "object"
+                                              },
+                                              "type": {
+                                                "description": "The action type.",
+                                                "enum": [
+                                                  "block_ip",
+                                                  "block_user"
+                                                ],
+                                                "type": "string",
+                                                "x-enum-varnames": [
+                                                  "BLOCK_IP",
+                                                  "BLOCK_USER"
+                                                ]
+                                              }
+                                            },
+                                            "type": "object"
+                                          },
+                                          "type": "array"
+                                        },
                                         "condition": {
                                           "description": "A case contains logical operations (`>`,`>=`, `&&`, `||`) to determine if a signal should be generated\nbased on the event counts in the previously defined queries.",
                                           "type": "string"
@@ -384497,6 +386563,17 @@
                                     "example": 1729843470000,
                                     "format": "int64",
                                     "type": "integer"
+                                  },
+                                  "groupSignalsBy": {
+                                    "description": "Additional grouping to perform on top of the existing groups in the query section. Must be a subset of the existing groups.",
+                                    "example": [
+                                      "service"
+                                    ],
+                                    "items": {
+                                      "description": "Field to group by.",
+                                      "type": "string"
+                                    },
+                                    "type": "array"
                                   },
                                   "index": {
                                     "description": "Index used to load the data.",
@@ -385210,6 +387287,41 @@
                                 "items": {
                                   "description": "Case when signal is generated.",
                                   "properties": {
+                                    "actions": {
+                                      "description": "Action to perform for each rule case.",
+                                      "items": {
+                                        "description": "Action to perform when a signal is triggered. Only available for Application Security rule type.",
+                                        "properties": {
+                                          "options": {
+                                            "description": "Options for the rule action",
+                                            "properties": {
+                                              "duration": {
+                                                "description": "Duration of the action in seconds. 0 indicates no expiration.",
+                                                "example": 0,
+                                                "format": "int64",
+                                                "minimum": 0,
+                                                "type": "integer"
+                                              }
+                                            },
+                                            "type": "object"
+                                          },
+                                          "type": {
+                                            "description": "The action type.",
+                                            "enum": [
+                                              "block_ip",
+                                              "block_user"
+                                            ],
+                                            "type": "string",
+                                            "x-enum-varnames": [
+                                              "BLOCK_IP",
+                                              "BLOCK_USER"
+                                            ]
+                                          }
+                                        },
+                                        "type": "object"
+                                      },
+                                      "type": "array"
+                                    },
                                     "condition": {
                                       "description": "A case contains logical operations (`>`,`>=`, `&&`, `||`) to determine if a signal should be generated\nbased on the event counts in the previously defined queries.",
                                       "type": "string"
@@ -385258,6 +387370,17 @@
                                 "example": 1729843470000,
                                 "format": "int64",
                                 "type": "integer"
+                              },
+                              "groupSignalsBy": {
+                                "description": "Additional grouping to perform on top of the existing groups in the query section. Must be a subset of the existing groups.",
+                                "example": [
+                                  "service"
+                                ],
+                                "items": {
+                                  "description": "Field to group by.",
+                                  "type": "string"
+                                },
+                                "type": "array"
                               },
                               "index": {
                                 "description": "Index used to load the data.",
@@ -386487,6 +388610,41 @@
                                   "items": {
                                     "description": "Case when signal is generated.",
                                     "properties": {
+                                      "actions": {
+                                        "description": "Action to perform for each rule case.",
+                                        "items": {
+                                          "description": "Action to perform when a signal is triggered. Only available for Application Security rule type.",
+                                          "properties": {
+                                            "options": {
+                                              "description": "Options for the rule action",
+                                              "properties": {
+                                                "duration": {
+                                                  "description": "Duration of the action in seconds. 0 indicates no expiration.",
+                                                  "example": 0,
+                                                  "format": "int64",
+                                                  "minimum": 0,
+                                                  "type": "integer"
+                                                }
+                                              },
+                                              "type": "object"
+                                            },
+                                            "type": {
+                                              "description": "The action type.",
+                                              "enum": [
+                                                "block_ip",
+                                                "block_user"
+                                              ],
+                                              "type": "string",
+                                              "x-enum-varnames": [
+                                                "BLOCK_IP",
+                                                "BLOCK_USER"
+                                              ]
+                                            }
+                                          },
+                                          "type": "object"
+                                        },
+                                        "type": "array"
+                                      },
                                       "condition": {
                                         "description": "A case contains logical operations (`>`,`>=`, `&&`, `||`) to determine if a signal should be generated\nbased on the event counts in the previously defined queries.",
                                         "type": "string"
@@ -386535,6 +388693,17 @@
                                   "example": 1729843470000,
                                   "format": "int64",
                                   "type": "integer"
+                                },
+                                "groupSignalsBy": {
+                                  "description": "Additional grouping to perform on top of the existing groups in the query section. Must be a subset of the existing groups.",
+                                  "example": [
+                                    "service"
+                                  ],
+                                  "items": {
+                                    "description": "Field to group by.",
+                                    "type": "string"
+                                  },
+                                  "type": "array"
                                 },
                                 "index": {
                                   "description": "Index used to load the data.",
