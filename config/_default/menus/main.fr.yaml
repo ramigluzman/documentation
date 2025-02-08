@@ -3009,11 +3009,6 @@ menu:
       parent: cloud_cost
       identifier: cloud_cost_monitors
       weight: 12
-    - name: Account Filtering
-      url: /cloud_cost_management/account_filtering
-      parent: cloud_cost
-      identifier: cloud_cost_account_filtering
-      weight: 13
     - name: APM
       url: tracing/
       pre: apm
