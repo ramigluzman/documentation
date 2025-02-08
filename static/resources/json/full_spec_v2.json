@@ -293,7 +293,7 @@
         }
       },
       "ConfluentAccountID": {
-        "description": "Confluent Account id.",
+        "description": "Confluent Account ID.",
         "in": "path",
         "name": "account_id",
         "required": true,
@@ -1618,13 +1618,13 @@
                                 "type": "string"
                               },
                               "rule_types": {
-                                "description": "Security rule types used to filter signals and vulnerabilities generating notifications.",
+                                "description": "Security rule types used as filters in security rules.",
                                 "example": [
                                   "misconfiguration",
                                   "attack_path"
                                 ],
                                 "items": {
-                                  "description": "Security rule types which can be used in notification rules.\nSignal-based notification rules can filter signals based on rule types application_security, log_detection,\nworkload_security, signal_correlation, cloud_configuration and infrastructure_configuration.\nVulnerability-based notification rules can filter vulnerabilities based on rule types application_code_vulnerability,\napplication_library_vulnerability, attack_path, container_image_vulnerability, identity_risk, misconfiguration, and api_security.",
+                                  "description": "Security rule type which can be used in security rules.\nSignal-based notification rules can filter signals based on rule types application_security, log_detection,\nworkload_security, signal_correlation, cloud_configuration and infrastructure_configuration.\nVulnerability-based notification rules can filter vulnerabilities based on rule types application_code_vulnerability,\napplication_library_vulnerability, attack_path, container_image_vulnerability, identity_risk, misconfiguration, and api_security.",
                                   "enum": [
                                     "application_security",
                                     "log_detection",
@@ -41983,13 +41983,13 @@
                         "type": "string"
                       },
                       "rule_types": {
-                        "description": "Security rule types used to filter signals and vulnerabilities generating notifications.",
+                        "description": "Security rule types used as filters in security rules.",
                         "example": [
                           "misconfiguration",
                           "attack_path"
                         ],
                         "items": {
-                          "description": "Security rule types which can be used in notification rules.\nSignal-based notification rules can filter signals based on rule types application_security, log_detection,\nworkload_security, signal_correlation, cloud_configuration and infrastructure_configuration.\nVulnerability-based notification rules can filter vulnerabilities based on rule types application_code_vulnerability,\napplication_library_vulnerability, attack_path, container_image_vulnerability, identity_risk, misconfiguration, and api_security.",
+                          "description": "Security rule type which can be used in security rules.\nSignal-based notification rules can filter signals based on rule types application_security, log_detection,\nworkload_security, signal_correlation, cloud_configuration and infrastructure_configuration.\nVulnerability-based notification rules can filter vulnerabilities based on rule types application_code_vulnerability,\napplication_library_vulnerability, attack_path, container_image_vulnerability, identity_risk, misconfiguration, and api_security.",
                           "enum": [
                             "application_security",
                             "log_detection",
@@ -42139,13 +42139,13 @@
                     "type": "string"
                   },
                   "rule_types": {
-                    "description": "Security rule types used to filter signals and vulnerabilities generating notifications.",
+                    "description": "Security rule types used as filters in security rules.",
                     "example": [
                       "misconfiguration",
                       "attack_path"
                     ],
                     "items": {
-                      "description": "Security rule types which can be used in notification rules.\nSignal-based notification rules can filter signals based on rule types application_security, log_detection,\nworkload_security, signal_correlation, cloud_configuration and infrastructure_configuration.\nVulnerability-based notification rules can filter vulnerabilities based on rule types application_code_vulnerability,\napplication_library_vulnerability, attack_path, container_image_vulnerability, identity_risk, misconfiguration, and api_security.",
+                      "description": "Security rule type which can be used in security rules.\nSignal-based notification rules can filter signals based on rule types application_security, log_detection,\nworkload_security, signal_correlation, cloud_configuration and infrastructure_configuration.\nVulnerability-based notification rules can filter vulnerabilities based on rule types application_code_vulnerability,\napplication_library_vulnerability, attack_path, container_image_vulnerability, identity_risk, misconfiguration, and api_security.",
                       "enum": [
                         "application_security",
                         "log_detection",
@@ -42289,13 +42289,13 @@
                 "type": "string"
               },
               "rule_types": {
-                "description": "Security rule types used to filter signals and vulnerabilities generating notifications.",
+                "description": "Security rule types used as filters in security rules.",
                 "example": [
                   "misconfiguration",
                   "attack_path"
                 ],
                 "items": {
-                  "description": "Security rule types which can be used in notification rules.\nSignal-based notification rules can filter signals based on rule types application_security, log_detection,\nworkload_security, signal_correlation, cloud_configuration and infrastructure_configuration.\nVulnerability-based notification rules can filter vulnerabilities based on rule types application_code_vulnerability,\napplication_library_vulnerability, attack_path, container_image_vulnerability, identity_risk, misconfiguration, and api_security.",
+                  "description": "Security rule type which can be used in security rules.\nSignal-based notification rules can filter signals based on rule types application_security, log_detection,\nworkload_security, signal_correlation, cloud_configuration and infrastructure_configuration.\nVulnerability-based notification rules can filter vulnerabilities based on rule types application_code_vulnerability,\napplication_library_vulnerability, attack_path, container_image_vulnerability, identity_risk, misconfiguration, and api_security.",
                   "enum": [
                     "application_security",
                     "log_detection",
@@ -128365,13 +128365,13 @@
                     "type": "string"
                   },
                   "rule_types": {
-                    "description": "Security rule types used to filter signals and vulnerabilities generating notifications.",
+                    "description": "Security rule types used as filters in security rules.",
                     "example": [
                       "misconfiguration",
                       "attack_path"
                     ],
                     "items": {
-                      "description": "Security rule types which can be used in notification rules.\nSignal-based notification rules can filter signals based on rule types application_security, log_detection,\nworkload_security, signal_correlation, cloud_configuration and infrastructure_configuration.\nVulnerability-based notification rules can filter vulnerabilities based on rule types application_code_vulnerability,\napplication_library_vulnerability, attack_path, container_image_vulnerability, identity_risk, misconfiguration, and api_security.",
+                      "description": "Security rule type which can be used in security rules.\nSignal-based notification rules can filter signals based on rule types application_security, log_detection,\nworkload_security, signal_correlation, cloud_configuration and infrastructure_configuration.\nVulnerability-based notification rules can filter vulnerabilities based on rule types application_code_vulnerability,\napplication_library_vulnerability, attack_path, container_image_vulnerability, identity_risk, misconfiguration, and api_security.",
                       "enum": [
                         "application_security",
                         "log_detection",
@@ -128577,13 +128577,13 @@
                 "type": "string"
               },
               "rule_types": {
-                "description": "Security rule types used to filter signals and vulnerabilities generating notifications.",
+                "description": "Security rule types used as filters in security rules.",
                 "example": [
                   "misconfiguration",
                   "attack_path"
                 ],
                 "items": {
-                  "description": "Security rule types which can be used in notification rules.\nSignal-based notification rules can filter signals based on rule types application_security, log_detection,\nworkload_security, signal_correlation, cloud_configuration and infrastructure_configuration.\nVulnerability-based notification rules can filter vulnerabilities based on rule types application_code_vulnerability,\napplication_library_vulnerability, attack_path, container_image_vulnerability, identity_risk, misconfiguration, and api_security.",
+                  "description": "Security rule type which can be used in security rules.\nSignal-based notification rules can filter signals based on rule types application_security, log_detection,\nworkload_security, signal_correlation, cloud_configuration and infrastructure_configuration.\nVulnerability-based notification rules can filter vulnerabilities based on rule types application_code_vulnerability,\napplication_library_vulnerability, attack_path, container_image_vulnerability, identity_risk, misconfiguration, and api_security.",
                   "enum": [
                     "application_security",
                     "log_detection",
@@ -128776,13 +128776,13 @@
                         "type": "string"
                       },
                       "rule_types": {
-                        "description": "Security rule types used to filter signals and vulnerabilities generating notifications.",
+                        "description": "Security rule types used as filters in security rules.",
                         "example": [
                           "misconfiguration",
                           "attack_path"
                         ],
                         "items": {
-                          "description": "Security rule types which can be used in notification rules.\nSignal-based notification rules can filter signals based on rule types application_security, log_detection,\nworkload_security, signal_correlation, cloud_configuration and infrastructure_configuration.\nVulnerability-based notification rules can filter vulnerabilities based on rule types application_code_vulnerability,\napplication_library_vulnerability, attack_path, container_image_vulnerability, identity_risk, misconfiguration, and api_security.",
+                          "description": "Security rule type which can be used in security rules.\nSignal-based notification rules can filter signals based on rule types application_security, log_detection,\nworkload_security, signal_correlation, cloud_configuration and infrastructure_configuration.\nVulnerability-based notification rules can filter vulnerabilities based on rule types application_code_vulnerability,\napplication_library_vulnerability, attack_path, container_image_vulnerability, identity_risk, misconfiguration, and api_security.",
                           "enum": [
                             "application_security",
                             "log_detection",
@@ -132864,13 +132864,13 @@
                         "type": "string"
                       },
                       "rule_types": {
-                        "description": "Security rule types used to filter signals and vulnerabilities generating notifications.",
+                        "description": "Security rule types used as filters in security rules.",
                         "example": [
                           "misconfiguration",
                           "attack_path"
                         ],
                         "items": {
-                          "description": "Security rule types which can be used in notification rules.\nSignal-based notification rules can filter signals based on rule types application_security, log_detection,\nworkload_security, signal_correlation, cloud_configuration and infrastructure_configuration.\nVulnerability-based notification rules can filter vulnerabilities based on rule types application_code_vulnerability,\napplication_library_vulnerability, attack_path, container_image_vulnerability, identity_risk, misconfiguration, and api_security.",
+                          "description": "Security rule type which can be used in security rules.\nSignal-based notification rules can filter signals based on rule types application_security, log_detection,\nworkload_security, signal_correlation, cloud_configuration and infrastructure_configuration.\nVulnerability-based notification rules can filter vulnerabilities based on rule types application_code_vulnerability,\napplication_library_vulnerability, attack_path, container_image_vulnerability, identity_risk, misconfiguration, and api_security.",
                           "enum": [
                             "application_security",
                             "log_detection",
@@ -133027,13 +133027,13 @@
                     "type": "string"
                   },
                   "rule_types": {
-                    "description": "Security rule types used to filter signals and vulnerabilities generating notifications.",
+                    "description": "Security rule types used as filters in security rules.",
                     "example": [
                       "misconfiguration",
                       "attack_path"
                     ],
                     "items": {
-                      "description": "Security rule types which can be used in notification rules.\nSignal-based notification rules can filter signals based on rule types application_security, log_detection,\nworkload_security, signal_correlation, cloud_configuration and infrastructure_configuration.\nVulnerability-based notification rules can filter vulnerabilities based on rule types application_code_vulnerability,\napplication_library_vulnerability, attack_path, container_image_vulnerability, identity_risk, misconfiguration, and api_security.",
+                      "description": "Security rule type which can be used in security rules.\nSignal-based notification rules can filter signals based on rule types application_security, log_detection,\nworkload_security, signal_correlation, cloud_configuration and infrastructure_configuration.\nVulnerability-based notification rules can filter vulnerabilities based on rule types application_code_vulnerability,\napplication_library_vulnerability, attack_path, container_image_vulnerability, identity_risk, misconfiguration, and api_security.",
                       "enum": [
                         "application_security",
                         "log_detection",
@@ -133184,13 +133184,13 @@
                 "type": "string"
               },
               "rule_types": {
-                "description": "Security rule types used to filter signals and vulnerabilities generating notifications.",
+                "description": "Security rule types used as filters in security rules.",
                 "example": [
                   "misconfiguration",
                   "attack_path"
                 ],
                 "items": {
-                  "description": "Security rule types which can be used in notification rules.\nSignal-based notification rules can filter signals based on rule types application_security, log_detection,\nworkload_security, signal_correlation, cloud_configuration and infrastructure_configuration.\nVulnerability-based notification rules can filter vulnerabilities based on rule types application_code_vulnerability,\napplication_library_vulnerability, attack_path, container_image_vulnerability, identity_risk, misconfiguration, and api_security.",
+                  "description": "Security rule type which can be used in security rules.\nSignal-based notification rules can filter signals based on rule types application_security, log_detection,\nworkload_security, signal_correlation, cloud_configuration and infrastructure_configuration.\nVulnerability-based notification rules can filter vulnerabilities based on rule types application_code_vulnerability,\napplication_library_vulnerability, attack_path, container_image_vulnerability, identity_risk, misconfiguration, and api_security.",
                   "enum": [
                     "application_security",
                     "log_detection",
@@ -145289,13 +145289,13 @@
         ]
       },
       "RuleTypes": {
-        "description": "Security rule types used to filter signals and vulnerabilities generating notifications.",
+        "description": "Security rule types used as filters in security rules.",
         "example": [
           "misconfiguration",
           "attack_path"
         ],
         "items": {
-          "description": "Security rule types which can be used in notification rules.\nSignal-based notification rules can filter signals based on rule types application_security, log_detection,\nworkload_security, signal_correlation, cloud_configuration and infrastructure_configuration.\nVulnerability-based notification rules can filter vulnerabilities based on rule types application_code_vulnerability,\napplication_library_vulnerability, attack_path, container_image_vulnerability, identity_risk, misconfiguration, and api_security.",
+          "description": "Security rule type which can be used in security rules.\nSignal-based notification rules can filter signals based on rule types application_security, log_detection,\nworkload_security, signal_correlation, cloud_configuration and infrastructure_configuration.\nVulnerability-based notification rules can filter vulnerabilities based on rule types application_code_vulnerability,\napplication_library_vulnerability, attack_path, container_image_vulnerability, identity_risk, misconfiguration, and api_security.",
           "enum": [
             "application_security",
             "log_detection",
@@ -145331,7 +145331,7 @@
         "type": "array"
       },
       "RuleTypesItems": {
-        "description": "Security rule types which can be used in notification rules.\nSignal-based notification rules can filter signals based on rule types application_security, log_detection,\nworkload_security, signal_correlation, cloud_configuration and infrastructure_configuration.\nVulnerability-based notification rules can filter vulnerabilities based on rule types application_code_vulnerability,\napplication_library_vulnerability, attack_path, container_image_vulnerability, identity_risk, misconfiguration, and api_security.",
+        "description": "Security rule type which can be used in security rules.\nSignal-based notification rules can filter signals based on rule types application_security, log_detection,\nworkload_security, signal_correlation, cloud_configuration and infrastructure_configuration.\nVulnerability-based notification rules can filter vulnerabilities based on rule types application_code_vulnerability,\napplication_library_vulnerability, attack_path, container_image_vulnerability, identity_risk, misconfiguration, and api_security.",
         "enum": [
           "application_security",
           "log_detection",
@@ -168990,13 +168990,13 @@
             "type": "string"
           },
           "rule_types": {
-            "description": "Security rule types used to filter signals and vulnerabilities generating notifications.",
+            "description": "Security rule types used as filters in security rules.",
             "example": [
               "misconfiguration",
               "attack_path"
             ],
             "items": {
-              "description": "Security rule types which can be used in notification rules.\nSignal-based notification rules can filter signals based on rule types application_security, log_detection,\nworkload_security, signal_correlation, cloud_configuration and infrastructure_configuration.\nVulnerability-based notification rules can filter vulnerabilities based on rule types application_code_vulnerability,\napplication_library_vulnerability, attack_path, container_image_vulnerability, identity_risk, misconfiguration, and api_security.",
+              "description": "Security rule type which can be used in security rules.\nSignal-based notification rules can filter signals based on rule types application_security, log_detection,\nworkload_security, signal_correlation, cloud_configuration and infrastructure_configuration.\nVulnerability-based notification rules can filter vulnerabilities based on rule types application_code_vulnerability,\napplication_library_vulnerability, attack_path, container_image_vulnerability, identity_risk, misconfiguration, and api_security.",
               "enum": [
                 "application_security",
                 "log_detection",
@@ -295736,7 +295736,7 @@
         "operationId": "DeleteConfluentAccount",
         "parameters": [
           {
-            "description": "Confluent Account id.",
+            "description": "Confluent Account ID.",
             "in": "path",
             "name": "account_id",
             "required": true,
@@ -295882,7 +295882,7 @@
         "operationId": "GetConfluentAccount",
         "parameters": [
           {
-            "description": "Confluent Account id.",
+            "description": "Confluent Account ID.",
             "in": "path",
             "name": "account_id",
             "required": true,
@@ -296137,7 +296137,7 @@
         "operationId": "UpdateConfluentAccount",
         "parameters": [
           {
-            "description": "Confluent Account id.",
+            "description": "Confluent Account ID.",
             "in": "path",
             "name": "account_id",
             "required": true,
@@ -296468,7 +296468,7 @@
         "operationId": "ListConfluentResource",
         "parameters": [
           {
-            "description": "Confluent Account id.",
+            "description": "Confluent Account ID.",
             "in": "path",
             "name": "account_id",
             "required": true,
@@ -296698,7 +296698,7 @@
         "operationId": "CreateConfluentResource",
         "parameters": [
           {
-            "description": "Confluent Account id.",
+            "description": "Confluent Account ID.",
             "in": "path",
             "name": "account_id",
             "required": true,
@@ -297006,7 +297006,7 @@
         "operationId": "DeleteConfluentResource",
         "parameters": [
           {
-            "description": "Confluent Account id.",
+            "description": "Confluent Account ID.",
             "in": "path",
             "name": "account_id",
             "required": true,
@@ -297161,7 +297161,7 @@
         "operationId": "GetConfluentResource",
         "parameters": [
           {
-            "description": "Confluent Account id.",
+            "description": "Confluent Account ID.",
             "in": "path",
             "name": "account_id",
             "required": true,
@@ -297396,7 +297396,7 @@
         "operationId": "UpdateConfluentResource",
         "parameters": [
           {
-            "description": "Confluent Account id.",
+            "description": "Confluent Account ID.",
             "in": "path",
             "name": "account_id",
             "required": true,
@@ -312834,7 +312834,7 @@
             }
           },
           {
-            "description": "(Beta) Filter custom metrics that have or have not been queried in the specified window[seconds].\nIf no window is provided or the window is less than 2 hours, a default of 2 hours will be applied.",
+            "description": "(Preview) Filter custom metrics that have or have not been queried in the specified window[seconds].\nIf no window is provided or the window is less than 2 hours, a default of 2 hours will be applied.",
             "example": true,
             "in": "query",
             "name": "filter[queried]",
@@ -312851,6 +312851,16 @@
             "required": false,
             "schema": {
               "type": "string"
+            }
+          },
+          {
+            "description": "(Preview) Filter metrics that are used in dashboards, monitors, notebooks, SLOs.",
+            "example": true,
+            "in": "query",
+            "name": "filter[related_assets]",
+            "required": false,
+            "schema": {
+              "type": "boolean"
             }
           },
           {
@@ -344847,13 +344857,13 @@
                                     "type": "string"
                                   },
                                   "rule_types": {
-                                    "description": "Security rule types used to filter signals and vulnerabilities generating notifications.",
+                                    "description": "Security rule types used as filters in security rules.",
                                     "example": [
                                       "misconfiguration",
                                       "attack_path"
                                     ],
                                     "items": {
-                                      "description": "Security rule types which can be used in notification rules.\nSignal-based notification rules can filter signals based on rule types application_security, log_detection,\nworkload_security, signal_correlation, cloud_configuration and infrastructure_configuration.\nVulnerability-based notification rules can filter vulnerabilities based on rule types application_code_vulnerability,\napplication_library_vulnerability, attack_path, container_image_vulnerability, identity_risk, misconfiguration, and api_security.",
+                                      "description": "Security rule type which can be used in security rules.\nSignal-based notification rules can filter signals based on rule types application_security, log_detection,\nworkload_security, signal_correlation, cloud_configuration and infrastructure_configuration.\nVulnerability-based notification rules can filter vulnerabilities based on rule types application_code_vulnerability,\napplication_library_vulnerability, attack_path, container_image_vulnerability, identity_risk, misconfiguration, and api_security.",
                                       "enum": [
                                         "application_security",
                                         "log_detection",
@@ -345070,7 +345080,7 @@
             ]
           }
         ],
-        "summary": "Get the list of signal-based rules",
+        "summary": "Get the list of signal-based notification rules",
         "tags": [
           "Security Monitoring"
         ],
@@ -345119,13 +345129,13 @@
                                 "type": "string"
                               },
                               "rule_types": {
-                                "description": "Security rule types used to filter signals and vulnerabilities generating notifications.",
+                                "description": "Security rule types used as filters in security rules.",
                                 "example": [
                                   "misconfiguration",
                                   "attack_path"
                                 ],
                                 "items": {
-                                  "description": "Security rule types which can be used in notification rules.\nSignal-based notification rules can filter signals based on rule types application_security, log_detection,\nworkload_security, signal_correlation, cloud_configuration and infrastructure_configuration.\nVulnerability-based notification rules can filter vulnerabilities based on rule types application_code_vulnerability,\napplication_library_vulnerability, attack_path, container_image_vulnerability, identity_risk, misconfiguration, and api_security.",
+                                  "description": "Security rule type which can be used in security rules.\nSignal-based notification rules can filter signals based on rule types application_security, log_detection,\nworkload_security, signal_correlation, cloud_configuration and infrastructure_configuration.\nVulnerability-based notification rules can filter vulnerabilities based on rule types application_code_vulnerability,\napplication_library_vulnerability, attack_path, container_image_vulnerability, identity_risk, misconfiguration, and api_security.",
                                   "enum": [
                                     "application_security",
                                     "log_detection",
@@ -345331,13 +345341,13 @@
                                   "type": "string"
                                 },
                                 "rule_types": {
-                                  "description": "Security rule types used to filter signals and vulnerabilities generating notifications.",
+                                  "description": "Security rule types used as filters in security rules.",
                                   "example": [
                                     "misconfiguration",
                                     "attack_path"
                                   ],
                                   "items": {
-                                    "description": "Security rule types which can be used in notification rules.\nSignal-based notification rules can filter signals based on rule types application_security, log_detection,\nworkload_security, signal_correlation, cloud_configuration and infrastructure_configuration.\nVulnerability-based notification rules can filter vulnerabilities based on rule types application_code_vulnerability,\napplication_library_vulnerability, attack_path, container_image_vulnerability, identity_risk, misconfiguration, and api_security.",
+                                    "description": "Security rule type which can be used in security rules.\nSignal-based notification rules can filter signals based on rule types application_security, log_detection,\nworkload_security, signal_correlation, cloud_configuration and infrastructure_configuration.\nVulnerability-based notification rules can filter vulnerabilities based on rule types application_code_vulnerability,\napplication_library_vulnerability, attack_path, container_image_vulnerability, identity_risk, misconfiguration, and api_security.",
                                     "enum": [
                                       "application_security",
                                       "log_detection",
@@ -345580,7 +345590,7 @@
             ]
           }
         ],
-        "summary": "Create a new signal-based rule",
+        "summary": "Create a new signal-based notification rule",
         "tags": [
           "Security Monitoring"
         ],
@@ -345730,7 +345740,7 @@
             ]
           }
         ],
-        "summary": "Delete a signal-based rule",
+        "summary": "Delete a signal-based notification rule",
         "tags": [
           "Security Monitoring"
         ],
@@ -345835,13 +345845,13 @@
                                   "type": "string"
                                 },
                                 "rule_types": {
-                                  "description": "Security rule types used to filter signals and vulnerabilities generating notifications.",
+                                  "description": "Security rule types used as filters in security rules.",
                                   "example": [
                                     "misconfiguration",
                                     "attack_path"
                                   ],
                                   "items": {
-                                    "description": "Security rule types which can be used in notification rules.\nSignal-based notification rules can filter signals based on rule types application_security, log_detection,\nworkload_security, signal_correlation, cloud_configuration and infrastructure_configuration.\nVulnerability-based notification rules can filter vulnerabilities based on rule types application_code_vulnerability,\napplication_library_vulnerability, attack_path, container_image_vulnerability, identity_risk, misconfiguration, and api_security.",
+                                    "description": "Security rule type which can be used in security rules.\nSignal-based notification rules can filter signals based on rule types application_security, log_detection,\nworkload_security, signal_correlation, cloud_configuration and infrastructure_configuration.\nVulnerability-based notification rules can filter vulnerabilities based on rule types application_code_vulnerability,\napplication_library_vulnerability, attack_path, container_image_vulnerability, identity_risk, misconfiguration, and api_security.",
                                     "enum": [
                                       "application_security",
                                       "log_detection",
@@ -346112,7 +346122,7 @@
             ]
           }
         ],
-        "summary": "Get details of a signal-based rule",
+        "summary": "Get details of a signal-based notification rule",
         "tags": [
           "Security Monitoring"
         ],
@@ -346172,13 +346182,13 @@
                                 "type": "string"
                               },
                               "rule_types": {
-                                "description": "Security rule types used to filter signals and vulnerabilities generating notifications.",
+                                "description": "Security rule types used as filters in security rules.",
                                 "example": [
                                   "misconfiguration",
                                   "attack_path"
                                 ],
                                 "items": {
-                                  "description": "Security rule types which can be used in notification rules.\nSignal-based notification rules can filter signals based on rule types application_security, log_detection,\nworkload_security, signal_correlation, cloud_configuration and infrastructure_configuration.\nVulnerability-based notification rules can filter vulnerabilities based on rule types application_code_vulnerability,\napplication_library_vulnerability, attack_path, container_image_vulnerability, identity_risk, misconfiguration, and api_security.",
+                                  "description": "Security rule type which can be used in security rules.\nSignal-based notification rules can filter signals based on rule types application_security, log_detection,\nworkload_security, signal_correlation, cloud_configuration and infrastructure_configuration.\nVulnerability-based notification rules can filter vulnerabilities based on rule types application_code_vulnerability,\napplication_library_vulnerability, attack_path, container_image_vulnerability, identity_risk, misconfiguration, and api_security.",
                                   "enum": [
                                     "application_security",
                                     "log_detection",
@@ -346390,13 +346400,13 @@
                                   "type": "string"
                                 },
                                 "rule_types": {
-                                  "description": "Security rule types used to filter signals and vulnerabilities generating notifications.",
+                                  "description": "Security rule types used as filters in security rules.",
                                   "example": [
                                     "misconfiguration",
                                     "attack_path"
                                   ],
                                   "items": {
-                                    "description": "Security rule types which can be used in notification rules.\nSignal-based notification rules can filter signals based on rule types application_security, log_detection,\nworkload_security, signal_correlation, cloud_configuration and infrastructure_configuration.\nVulnerability-based notification rules can filter vulnerabilities based on rule types application_code_vulnerability,\napplication_library_vulnerability, attack_path, container_image_vulnerability, identity_risk, misconfiguration, and api_security.",
+                                    "description": "Security rule type which can be used in security rules.\nSignal-based notification rules can filter signals based on rule types application_security, log_detection,\nworkload_security, signal_correlation, cloud_configuration and infrastructure_configuration.\nVulnerability-based notification rules can filter vulnerabilities based on rule types application_code_vulnerability,\napplication_library_vulnerability, attack_path, container_image_vulnerability, identity_risk, misconfiguration, and api_security.",
                                     "enum": [
                                       "application_security",
                                       "log_detection",
@@ -346734,7 +346744,7 @@
             ]
           }
         ],
-        "summary": "Patch a signal-based rule",
+        "summary": "Patch a signal-based notification rule",
         "tags": [
           "Security Monitoring"
         ],
@@ -348610,13 +348620,13 @@
                                     "type": "string"
                                   },
                                   "rule_types": {
-                                    "description": "Security rule types used to filter signals and vulnerabilities generating notifications.",
+                                    "description": "Security rule types used as filters in security rules.",
                                     "example": [
                                       "misconfiguration",
                                       "attack_path"
                                     ],
                                     "items": {
-                                      "description": "Security rule types which can be used in notification rules.\nSignal-based notification rules can filter signals based on rule types application_security, log_detection,\nworkload_security, signal_correlation, cloud_configuration and infrastructure_configuration.\nVulnerability-based notification rules can filter vulnerabilities based on rule types application_code_vulnerability,\napplication_library_vulnerability, attack_path, container_image_vulnerability, identity_risk, misconfiguration, and api_security.",
+                                      "description": "Security rule type which can be used in security rules.\nSignal-based notification rules can filter signals based on rule types application_security, log_detection,\nworkload_security, signal_correlation, cloud_configuration and infrastructure_configuration.\nVulnerability-based notification rules can filter vulnerabilities based on rule types application_code_vulnerability,\napplication_library_vulnerability, attack_path, container_image_vulnerability, identity_risk, misconfiguration, and api_security.",
                                       "enum": [
                                         "application_security",
                                         "log_detection",
@@ -348833,7 +348843,7 @@
             ]
           }
         ],
-        "summary": "Get the list of vulnerability-based rules",
+        "summary": "Get the list of vulnerability notification rules",
         "tags": [
           "Security Monitoring"
         ],
@@ -348882,13 +348892,13 @@
                                 "type": "string"
                               },
                               "rule_types": {
-                                "description": "Security rule types used to filter signals and vulnerabilities generating notifications.",
+                                "description": "Security rule types used as filters in security rules.",
                                 "example": [
                                   "misconfiguration",
                                   "attack_path"
                                 ],
                                 "items": {
-                                  "description": "Security rule types which can be used in notification rules.\nSignal-based notification rules can filter signals based on rule types application_security, log_detection,\nworkload_security, signal_correlation, cloud_configuration and infrastructure_configuration.\nVulnerability-based notification rules can filter vulnerabilities based on rule types application_code_vulnerability,\napplication_library_vulnerability, attack_path, container_image_vulnerability, identity_risk, misconfiguration, and api_security.",
+                                  "description": "Security rule type which can be used in security rules.\nSignal-based notification rules can filter signals based on rule types application_security, log_detection,\nworkload_security, signal_correlation, cloud_configuration and infrastructure_configuration.\nVulnerability-based notification rules can filter vulnerabilities based on rule types application_code_vulnerability,\napplication_library_vulnerability, attack_path, container_image_vulnerability, identity_risk, misconfiguration, and api_security.",
                                   "enum": [
                                     "application_security",
                                     "log_detection",
@@ -349094,13 +349104,13 @@
                                   "type": "string"
                                 },
                                 "rule_types": {
-                                  "description": "Security rule types used to filter signals and vulnerabilities generating notifications.",
+                                  "description": "Security rule types used as filters in security rules.",
                                   "example": [
                                     "misconfiguration",
                                     "attack_path"
                                   ],
                                   "items": {
-                                    "description": "Security rule types which can be used in notification rules.\nSignal-based notification rules can filter signals based on rule types application_security, log_detection,\nworkload_security, signal_correlation, cloud_configuration and infrastructure_configuration.\nVulnerability-based notification rules can filter vulnerabilities based on rule types application_code_vulnerability,\napplication_library_vulnerability, attack_path, container_image_vulnerability, identity_risk, misconfiguration, and api_security.",
+                                    "description": "Security rule type which can be used in security rules.\nSignal-based notification rules can filter signals based on rule types application_security, log_detection,\nworkload_security, signal_correlation, cloud_configuration and infrastructure_configuration.\nVulnerability-based notification rules can filter vulnerabilities based on rule types application_code_vulnerability,\napplication_library_vulnerability, attack_path, container_image_vulnerability, identity_risk, misconfiguration, and api_security.",
                                     "enum": [
                                       "application_security",
                                       "log_detection",
@@ -349343,7 +349353,7 @@
             ]
           }
         ],
-        "summary": "Create a new vulnerability-based rule",
+        "summary": "Create a new vulnerability-based notification rule",
         "tags": [
           "Security Monitoring"
         ],
@@ -349493,7 +349503,7 @@
             ]
           }
         ],
-        "summary": "Delete a vulnerability-based rule",
+        "summary": "Delete a vulnerability-based notification rule",
         "tags": [
           "Security Monitoring"
         ],
@@ -349598,13 +349608,13 @@
                                   "type": "string"
                                 },
                                 "rule_types": {
-                                  "description": "Security rule types used to filter signals and vulnerabilities generating notifications.",
+                                  "description": "Security rule types used as filters in security rules.",
                                   "example": [
                                     "misconfiguration",
                                     "attack_path"
                                   ],
                                   "items": {
-                                    "description": "Security rule types which can be used in notification rules.\nSignal-based notification rules can filter signals based on rule types application_security, log_detection,\nworkload_security, signal_correlation, cloud_configuration and infrastructure_configuration.\nVulnerability-based notification rules can filter vulnerabilities based on rule types application_code_vulnerability,\napplication_library_vulnerability, attack_path, container_image_vulnerability, identity_risk, misconfiguration, and api_security.",
+                                    "description": "Security rule type which can be used in security rules.\nSignal-based notification rules can filter signals based on rule types application_security, log_detection,\nworkload_security, signal_correlation, cloud_configuration and infrastructure_configuration.\nVulnerability-based notification rules can filter vulnerabilities based on rule types application_code_vulnerability,\napplication_library_vulnerability, attack_path, container_image_vulnerability, identity_risk, misconfiguration, and api_security.",
                                     "enum": [
                                       "application_security",
                                       "log_detection",
@@ -349875,7 +349885,7 @@
             ]
           }
         ],
-        "summary": "Get details of a vulnerability-based rule",
+        "summary": "Get details of a vulnerability notification rule",
         "tags": [
           "Security Monitoring"
         ],
@@ -349935,13 +349945,13 @@
                                 "type": "string"
                               },
                               "rule_types": {
-                                "description": "Security rule types used to filter signals and vulnerabilities generating notifications.",
+                                "description": "Security rule types used as filters in security rules.",
                                 "example": [
                                   "misconfiguration",
                                   "attack_path"
                                 ],
                                 "items": {
-                                  "description": "Security rule types which can be used in notification rules.\nSignal-based notification rules can filter signals based on rule types application_security, log_detection,\nworkload_security, signal_correlation, cloud_configuration and infrastructure_configuration.\nVulnerability-based notification rules can filter vulnerabilities based on rule types application_code_vulnerability,\napplication_library_vulnerability, attack_path, container_image_vulnerability, identity_risk, misconfiguration, and api_security.",
+                                  "description": "Security rule type which can be used in security rules.\nSignal-based notification rules can filter signals based on rule types application_security, log_detection,\nworkload_security, signal_correlation, cloud_configuration and infrastructure_configuration.\nVulnerability-based notification rules can filter vulnerabilities based on rule types application_code_vulnerability,\napplication_library_vulnerability, attack_path, container_image_vulnerability, identity_risk, misconfiguration, and api_security.",
                                   "enum": [
                                     "application_security",
                                     "log_detection",
@@ -350153,13 +350163,13 @@
                                   "type": "string"
                                 },
                                 "rule_types": {
-                                  "description": "Security rule types used to filter signals and vulnerabilities generating notifications.",
+                                  "description": "Security rule types used as filters in security rules.",
                                   "example": [
                                     "misconfiguration",
                                     "attack_path"
                                   ],
                                   "items": {
-                                    "description": "Security rule types which can be used in notification rules.\nSignal-based notification rules can filter signals based on rule types application_security, log_detection,\nworkload_security, signal_correlation, cloud_configuration and infrastructure_configuration.\nVulnerability-based notification rules can filter vulnerabilities based on rule types application_code_vulnerability,\napplication_library_vulnerability, attack_path, container_image_vulnerability, identity_risk, misconfiguration, and api_security.",
+                                    "description": "Security rule type which can be used in security rules.\nSignal-based notification rules can filter signals based on rule types application_security, log_detection,\nworkload_security, signal_correlation, cloud_configuration and infrastructure_configuration.\nVulnerability-based notification rules can filter vulnerabilities based on rule types application_code_vulnerability,\napplication_library_vulnerability, attack_path, container_image_vulnerability, identity_risk, misconfiguration, and api_security.",
                                     "enum": [
                                       "application_security",
                                       "log_detection",
@@ -350497,7 +350507,7 @@
             ]
           }
         ],
-        "summary": "Patch a vulnerability-based rule",
+        "summary": "Patch a vulnerability-based notification rule",
         "tags": [
           "Security Monitoring"
         ],
