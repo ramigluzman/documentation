@@ -35,7 +35,7 @@ Navigate to [**Cloud Costs** > **Accounts**][2] and click on **Manage Account** 
 
 {{< img src="cloud_cost/account_filtering/manage_account.png" alt="Manage Account button on account card" style="width:100%;" >}}
 
-Click on **Billing dataset** to access the Account Filtering UI. Now, you can select / deselect accounts from the table to filter member accounts. You can optionally check the **Include new member accounts by default** box if you want to automatically include new member accounts that may get created.
+Click on **Billing dataset** to access the Account Filtering UI. Now, you can select / deselect accounts from the table to filter member accounts. You can optionally check the **Include new member accounts by default** box if you want to automatically include new member accounts that get created.
 
 {{< img src="cloud_cost/account_filtering/account_filtering.png" alt="Account Filtering UI to filter AWS member accounts" style="width:100%;" >}}
 
