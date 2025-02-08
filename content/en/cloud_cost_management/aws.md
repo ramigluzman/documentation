@@ -352,6 +352,10 @@ Additionally, adding accounts to a billing group impacts how Reservations and Sa
 To create a billing conductor CUR, follow the [AWS Cost and Usage Reports user guide][8]. Ensure the CUR meets [Datadog's requirements][9].
 After the billing conductor CUR is created, follow the Cloud Cost Management instructions above to set it up in Datadog.
 
+### Account filtering
+
+[Account Filtering][17] gives you control over what member accounts you want to ingest into Cloud Cost Management.
+
 ## Further reading
 {{< partial name="whats-next/whats-next.html" >}}
 
@@ -371,3 +375,4 @@ After the billing conductor CUR is created, follow the Cloud Cost Management ins
 [14]: https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html
 [15]: /cloud_cost_management/tag_pipelines
 [16]: https://docs.aws.amazon.com/billingconductor/latest/userguide/what-is-billingconductor.html
+[17]: /cloud_cost_management/account_filtering
